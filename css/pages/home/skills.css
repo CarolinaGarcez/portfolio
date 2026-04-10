@@ -1,0 +1,32 @@
+.skills {
+  padding: 80px 12%;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skills-list span {
+  background: #f1f1f1;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.3s;
+  cursor: default;
+}
+
+/* efeito bonito */
+.skills-list span:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}

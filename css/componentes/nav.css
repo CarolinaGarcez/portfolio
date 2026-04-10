@@ -1,0 +1,103 @@
+/* LOGO */
+.logo img {
+  width: 300px;
+  transition: 0.3s;
+}
+.logo img:hover {
+  transform: rotate(-15deg) scale(1.1);
+}
+.logo {
+  display: flex;
+  align-items: center; /* centraliza a imagem dentro da div */
+}
+
+/* HEADER */
+header {
+  display: flex; /* Ativa o flexbox (organiza elementos lado a lado) */
+  justify-content: space-between; /* Espaça logo  */
+  align-items: center; /* Centraliza verticalmente */
+  height: 120px; /* Altura do header */
+  padding: 0 8%; /* Espaço lateral interno */
+  position: relative; 
+  width: 100%; /* Ocupa toda largura da tela */
+  z-index: 999; /* Fica na frente de outros elementos */
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+/* MENU */
+.menu {
+  display: flex; /* Deixa os itens do menu em linha */
+  align-items: center; /* Alinha verticalmente */
+  gap: 25px; /* Espaço entre os itens do menu */
+}
+
+/* LINKS */
+.menu a {
+  color: var(--text-color); /* Cor do texto do link */
+  font-size: 20px; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte (semi-negrito) */
+  position: relative; /* Necessário para usar ::after */
+  transition: 0.2s; /* Animação suave nas mudanças */
+}
+
+/* HOVER */
+.menu a:hover {
+  color: var(--primary-color); /* Muda a cor ao passar o mouse */
+}
+
+/* LINHA ANIMADA */
+.menu a::after {
+  content: ""; /* Cria um elemento vazio */
+  position: absolute; /* Posiciona em relação ao link */
+  bottom: -5px; /* Coloca a linha abaixo do texto */
+  left: 0; /* Começa da esquerda */
+  height: 2px; /* Altura da linha */
+  width: 0%; /* Começa invisível */
+  background: var(--primary-color); /* Cor da linha */
+  transition: 0.3s; /* Animação ao aparecer */
+}
+
+.menu a:hover::after {
+  width: 100%; /* Faz a linha crescer ao passar o mouse */
+}
+
+/* BOTÃO MOBILE */
+.bars {
+  display: none; /* Esconde o botão no desktop */
+  cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
+}
+/* RESPONSIVO */
+@media (max-width: 1100px) {
+    .menu {
+    position: absolute; /* Fica sobre o conteúdo */
+    top: 80px; /* Logo abaixo do header */
+    left: 0; /* Encosta na esquerda */
+    width: 100%; /* Ocupa toda largura */
+
+    flex-direction: column; /* Menu vira vertical */
+    background: var(--nav-background-color); /* Cor de fundo */
+
+    height: 0; /* Começa fechado */
+    overflow: hidden; /* Esconde conteúdo */
+    transition: 0.4s; /* Animação de abrir */
+  }
+
+    .mobile-menu {
+    height: 250px; /* Altura quando o menu abre */
+    padding: 20px; /* Espaçamento interno */
+  }
+    .menu a {
+    color: var(--nav-text-color); /* Cor branca no mobile */
+  }
+    .bars {
+    display: block; /* Mostra o botão hambúrguer */
+    background: var(--primary-color); /* Cor de fundo */
+    color: #fff; /* Cor do ícone */
+    padding: 8px; /* Espaço interno */
+    border-radius: 5px; /* Bordas arredondadas */
+  }
+}

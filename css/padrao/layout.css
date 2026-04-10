@@ -1,0 +1,6 @@
+
+h2 {
+  color: var(--text-color); /* Cor do texto */
+  font-size: 2rem; /* Tamanho do texto */
+  font-weight: 600; /* Peso da fonte */
+}

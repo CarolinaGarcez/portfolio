@@ -1,0 +1,6 @@
+.buttons a {
+  background: var(--primary-color);
+  padding: 12px 20px;
+  color: #fff;
+  border-radius: 6px;
+}

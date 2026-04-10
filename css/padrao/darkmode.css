@@ -1,0 +1,17 @@
+.dark-mode {
+  --background-color: #222; /* Fundo escuro */
+  --text-color: #fff; /* Texto branco */
+}
+/* Quando ativado, muda as variáveis (modo escuro) */
+
+.fa-sun {
+  position: fixed; /* Fica fixo na tela */
+  right: 40px; /* Distância da direita */
+  bottom: 40px; /* Distância do fundo */
+  padding: 14px; /* Espaço interno */
+  background-color: var(--primary-color); /* Cor de fundo */
+  font-size: 1.5rem; /* Tamanho do ícone */
+  color: #fff; /* Cor do ícone */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de clique */
+}

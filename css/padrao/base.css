@@ -1,0 +1,34 @@
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;...&display=swap");
+/* Importa a fonte "Poppins" do Google Fonts */
+
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos internos padrão */
+  box-sizing: border-box; /* Faz largura/altura incluírem padding e borda */
+  font-family: "poppins", sans-serif; /* Define fonte padrão */
+}
+
+a {
+  text-decoration: none; /* Remove sublinhado dos links */
+}
+
+ul,
+ol {
+  list-style: none; /* Remove bolinhas/números das listas */
+}
+
+:root {
+  --primary-color: #588157; /* Cor principal  */
+  --background-color: #ffffff; /* Cor de fundo padrão */
+  --nav-background-color: #588157; /* Fundo do menu mobile */
+  --nav-text-color: #ffffff; /* Cor do texto no menu mobile */
+  --text-color: #1e1e1e; /* Cor padrão do texto */
+}
+
+body {
+  background-color: var(--background-color); /* Aplica cor de fundo */
+}
+
+
+
+

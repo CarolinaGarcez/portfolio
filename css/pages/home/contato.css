@@ -1,0 +1,27 @@
+
+.contact {
+  padding: 100px 12%;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.contact h2 {
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin-bottom: 25px;
+}
+
+/* botão */
+.contact a {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  opacity: 0.8;
+}

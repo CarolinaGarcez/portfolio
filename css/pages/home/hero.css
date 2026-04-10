@@ -1,0 +1,159 @@
+.hero {
+  width: 100%; /* ocupa toda largura da tela */
+  min-height: 100vh; /* altura mínima */
+  display: flex; /* ativa flexbox (elementos lado a lado) */
+  justify-content: space-between; /* espaço entre texto e imagem */
+  align-items: center; /* centraliza verticalmente */
+  padding: 0 12%; /* espaçamento lateral */
+  gap: 40px; /* espaço entre os blocos (texto e imagem) */
+}
+
+
+/* ===== BLOCO DE TEXTO ===== */
+.hero_detail {
+  width: 50%; /* ocupa metade da tela */
+  display: flex; /* ativa flexbox */
+  flex-direction: column; /*  coluna  */
+  gap: 20px; /* espaço entre os elementos internos */
+}
+
+.title {
+  font-size: 70px; /* tamanho grande do nome */
+  font-weight: 700; /* negrito forte */
+  line-height: 1.1; /* altura entre linhas */
+  color: var(--text-color); /* cor padrão do texto */
+  letter-spacing: -2px; /* aproxima as letras (efeito moderno) */
+}
+
+.line1,
+.line2 {
+  display: block; /* força quebra de linha */
+}
+
+/* segunda linha  */
+.line2 {
+  font-size: 75px;
+  align-items: center; /* alinha verticalmente */
+  gap: 20px; /* espaço entre nome e ícone */
+  display: block;
+  margin-left: 200px;
+}
+.highlight {
+  color: var(--primary-color); /* cor principal */
+  color: #5f7f63;
+  position: relative; /* necessário para pseudo-elemento */
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA ===== */
+.title span {
+  opacity: 0; /* começa invisível */
+  transform: translateY(30px); /* começa deslocado para baixo */
+  animation: subir 0.6s ease forwards; /* animação */
+}
+
+/* delay da primeira linha */
+.line1 {
+  animation-delay: 0.2s; /* atraso da animação */
+}
+
+/* delay da segunda linha */
+.line2 {
+  animation-delay: 0.4s;
+}
+
+/* animação subir */
+@keyframes subir {
+  to {
+    opacity: 1; /* aparece */
+    transform: translateY(0); /* volta para posição normal */
+  }
+}
+
+/* ===== ÍCONE DO PC ===== */
+.icon-pc {
+  position: absolute;
+  left: 250px; /* ajusta layout */
+  top: -35px;
+}
+
+.icon-pc img {
+  width: 200px; /* tamanho */
+}
+
+/* ===== SUBTÍTULO (Front-End) ===== */
+.hero_detail h2 {
+  font-size: 20px; /* tamanho menor */
+  font-weight: 500; /* leve destaque */
+  color: var(--primary-color); /* cor principal */
+  margin: 10px 0; /* espaço vertical */
+}
+
+
+/* ===== TEXTO DESCRITIVO ===== */
+.hero_detail p {
+  font-size: 16px; /* tamanho padrão */
+  line-height: 1.6; /* espaçamento entre linhas */
+  width: 90%; /* não ocupa tudo (fica mais elegante) */
+  color: var(--text-color); /* cor padrão */
+}
+
+
+/* ===== IMAGEM  ===== */
+.hero-image {
+  position: relative; /* base para posicionamentos futuros */
+}
+
+
+.hero-image img {
+  width: 350px; /* tamanho da imagem */
+  height: 350px;
+  object-fit: cover; /* evita distorção */
+  border-radius: 65% 35% 50% 50% / 60% 40% 60% 40%;
+  border: 15px solid #5f7f63;
+  transition: all 0.4s ease;
+  
+}
+.hero-image img:hover {
+  border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
+}
+
+#element {
+  display: inline-block;
+}
+
+.typed-cursor {
+  font-size: inherit;
+  color: #5f7f63;
+}
+
+
+
+/* ===== RESPONSIVIDADE (tablet) ===== */
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column; /* empilha elementos */
+    text-align: center; /* centraliza texto */
+    gap: 3rem; /* espaço maior */
+  }
+
+  .hero_detail {
+    width: 100%; /* ocupa tudo */
+  }
+
+  .hero-image img {
+    width: 250px; /* imagem menor */
+    height: 250px;
+  }
+
+}
+
+
+/* ===== RESPONSIVIDADE (celular) ===== */
+@media (max-width: 600px) {
+
+  .title {
+    font-size: 55px; /* reduz tamanho do nome */
+  }
+
+}
