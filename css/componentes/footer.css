@@ -1,84 +1,94 @@
-/* Estilos para o footer */
-  footer {
-    background: #588157;
-    width: 100%;
-    color: white; /* Define a cor do texto como branca para contraste */
-  }
-  
-  /* Estiliza o contêiner de ícones sociais */
-  .socialIcons {
-    display: flex; /* Usa o layout flexível para alinhar os ícones */
-    justify-content: center; /* Centraliza os ícones horizontalmente */
-  }
-  
-  /* Estiliza os links dos ícones sociais */
-  .socialIcons a {
-    text-decoration: none; /* Remove o sublinhado dos links */
-    padding: 10px; /* Adiciona espaçamento interno ao redor do ícone */
-    margin: 10px; /* Adiciona espaçamento externo ao redor dos ícones */
-    border-radius: 50%; /* Torna os ícones sociais circulares */
-  }
-  
-  /* Estiliza o ícone dentro do link dos ícones sociais */
-  .socialIcons a i {
-    font-size: 2em; /* Define o tamanho da fonte dos ícones como 2 vezes o tamanho da fonte padrão */
-    color: white; /* Define a cor do ícone como branca */
-    opacity: 0.9; /* Define a opacidade do ícone para 90% */
-  }
-  
-  /* Efeito ao passar o mouse sobre o link dos ícones sociais */
-  .socialIcons a:hover {
-    background-color: #adc178;/* Altera a cor de fundo para um tom escuro de cinza quando o mouse passa sobre o ícone */
-    transition: 0.5s ; /* Adiciona uma transição suave de 0.5 segundos para a mudança de fundo */
-  }
-  
-  /* Efeito ao passar o mouse sobre o ícone dentro do link dos ícones sociais */
-  .socialIcons a:hover i {
-    color: white; /* Altera a cor do ícone para branca quando o mouse passa sobre o ícone */
-    transition: 0.5s; /* Adiciona uma transição suave de 0.5 segundos para a mudança de cor */
-  }
-  
-  /* Estiliza o contêiner de navegação do rodapé */
-  .footerNav {
-    margin: 30px 0; /* Adiciona espaçamento externo de 30 pixels acima e abaixo do contêiner de navegação */
-  }
-  
-  /* Estiliza a lista de navegação dentro do rodapé */
-  .footerNav ul {
-    display: flex; /* Usa o layout flexível para alinhar os itens da lista horizontalmente */
-    justify-content: center; /* Centraliza os itens da lista horizontalmente */
-    list-style-type: none; /* Remove os marcadores padrão da lista */
-  }
-  
-  /* Estiliza os links dentro dos itens da lista de navegação do rodapé */
-  .footerNav ul li a {
-    color: white; /* Define a cor do texto dos links como branca */
-    margin: 20px; /* Adiciona espaçamento externo ao redor dos links */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    font-size: 1.3em; /* Define o tamanho da fonte dos links como 1.3 vezes o tamanho da fonte padrão */
-    opacity: 0.7; /* Define a opacidade dos links para 70% */
-    transition: 0.5s; /* Adiciona uma transição suave de 0.5 segundos para a mudança de opacidade */
-  }
-  
-  /* Efeito ao passar o mouse sobre os links na navegação do rodapé */
-  .footerNav ul li a:hover {
-    opacity: 1; /* Define a opacidade dos links para 100% quando o mouse passa sobre eles */
-  }
-  
-  /* Estiliza a parte inferior do rodapé */
-  .footerBottom {
-    background: #588157; 
-    padding: 20px; /* Adiciona espaçamento interno de 20 pixels ao redor do conteúdo */
-  }
-  
-  /* Estiliza o texto da parte inferior do rodapé */
-  .footerBottom p {
-    text-align: center; /* Centraliza o texto */
-    margin: 0; /* Remove a margem do texto */
-    font-size: 1em; /* Define o tamanho da fonte como 1 vez o tamanho da fonte padrão */
-  }
-  
-  /* Estiliza o texto do designer na parte inferior do rodapé */
-  .footerBottom .designer {
-    font-weight: bold; /* Define o peso da fonte como negrito */
-  }
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+/* Estilo geral do rodapé */
+footer {
+background: #588157; /* cor principal do footer (verde do projeto) */
+width: 100%; /* ocupa toda a largura da tela */
+color: white; /* texto branco para contraste */
+}
+
+/* ========================= */
+/* ÍCONES SOCIAIS */
+/* ========================= */
+
+/* Container dos ícones */
+.socialIcons {
+display: flex; /* uso flexbox para alinhar */
+justify-content: center; /* centraliza horizontalmente */
+}
+
+/* Links dos ícones */
+.socialIcons a {
+text-decoration: none; /* remove sublinhado */
+padding: 10px; /* espaço interno */
+margin: 10px; /* espaço entre os ícones */
+border-radius: 50%; /* deixa o fundo circular */
+}
+
+/* Ícone em si */
+.socialIcons a i {
+font-size: 2em; /* tamanho grande para destaque */
+color: white; /* cor branca */
+opacity: 0.9; /* leve transparência */
+}
+
+/* Hover no ícone */
+.socialIcons a:hover {
+background-color: #adc178; /* cor mais clara ao passar o mouse */
+transition: 0.5s; /* animação suave */
+}
+
+/* Cor do ícone no hover */
+.socialIcons a:hover i {
+color: white; /* mantém branco */
+transition: 0.5s;
+}
+
+/* ========================= */
+/* FOOTER  */
+/* ========================= */
+
+/* Área final do footer */
+.footerBottom {
+background: #588157; /* mesma cor do footer */
+padding: 5px; /* espaço interno */
+text-align: center; /* centraliza tudo */
+}
+
+/* Texto do footer */
+.footerBottom p {
+margin: 0; /* remove margens padrão */
+font-size: 1em; /* tamanho padrão */
+}
+
+/* Nome (destaque) */
+.footerBottom .designer {
+font-weight: bold; /* deixa meu nome em negrito */
+}
+
+/* Logo do footer */
+.footerBottom img {
+width: 250px; /* tamanho da logo  */
+margin-bottom: -35px; /* espaço entre logo e texto */
+filter: brightness(1.2);
+animation: float 3s ease-in-out infinite; /* animação flutuando */
+}
+
+/* ========================= */
+/* ANIMAÇÃO */
+/* ========================= */
+
+/* Animação de leve "flutuação" */
+@keyframes float {
+0% {
+transform: translateY(0px);
+}
+50% {
+transform: translateY(-10px); /* sobe um pouquinho */
+}
+100% {
+transform: translateY(0px);
+}
+}
