@@ -1,18 +1,20 @@
 .about {
-  padding: 100px 12%;
-  text-align: center;
+  padding: 80px 10%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--text-color);
 }
 
 .about p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--text-color);
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+.highlight-text {
+  font-weight: bold;
+  color: #588157;
 }
