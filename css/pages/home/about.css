@@ -1,20 +1,82 @@
 .about {
-  padding: 80px 10%;
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative; /* trabalhar com camadas d */
+  padding: 100px 0;  /* espaço em cima e embaixo  */
+  background: linear-gradient(135deg, var(--primary-color), #3a5a40);/* usei um degradê do meu verde  */
+
 }
+/* CARD  */
+
+.about-container {
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 30px; 
+  border-radius: 16px; 
+  text-align: center; 
+  position: relative; 
+  z-index: 1;  /* garante que fique acima do fundo */
+  background: rgba(255, 255, 255, 0.95); /* fundo branco levemente transparente */
+  backdrop-filter: blur(6px);  /* efeito de vidro (glass) */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* sombra pra dar profundidade  */
+}
+/* TÍTULO*/
 
 .about h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem; 
+  font-weight: 700;
+}
+
+/* DESTAQUE */
+
+.highlight-text {
+  font-size: 1.1rem; 
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+
+/* DARK MODE*/
+
+@media (prefers-color-scheme: dark) {
+
+  .about-container {
+    background: rgba(30, 30, 30, 0.9); /* fundo escuro com transparência */
+    
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);/* sombra mais forte pra combinar com dark */
+  }
+
+  .about p {
+    color: #ddd; /* texto mais claro pra não cansar o olho */
+  }
+
+  .about h2 {
+    color: #fff;
+    
+  }
+}
+
+.btn-about {
+  display: inline-block; 
+  margin-top: 20px; 
+  padding: 12px 24px; 
+  background-color: var(--primary-color); 
+  color: #fff; 
+  text-decoration: none; 
+  border-radius: 8px; 
+  font-weight: 600; 
+  letter-spacing: 0.5px; /* leve espaçamento  */
+  transition: all 0.3s ease; /* animação suave */
+  
+}
+
+.btn-about:hover {
+  background-color: #3a5a40; /* escurece no hover  */
+  transform: translateY(-3px) scale(1.03);  /* sobe e cresce levemente (efeito mais vivo) */
+ 
 }
 
 .about p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-  color: #555;
-}
-.highlight-text {
-  font-weight: bold;
-  color: #588157;
+  margin-bottom: 15px; 
+  line-height: 1.6; 
+  color: #333; 
+
 }

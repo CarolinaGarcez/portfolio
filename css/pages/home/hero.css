@@ -1,15 +1,15 @@
 .hero {
-  width: 100%; /* ocupa toda largura da tela */
-  min-height: 100vh; /* altura mínima */
-  display: flex; /* ativa flexbox (elementos lado a lado) */
+  width: 100%; 
+  min-height: 100vh; 
+  display: flex; /* ativa flexbox  */
   justify-content: space-between; /* espaço entre texto e imagem */
-  align-items: center; /* centraliza verticalmente */
+  align-items: center; 
   padding: 0 12%; /* espaçamento lateral */
   gap: 40px; /* espaço entre os blocos (texto e imagem) */
 }
 
 
-/* ===== BLOCO DE TEXTO ===== */
+/*  TEXTO */
 .hero_detail {
   width: 50%; /* ocupa metade da tela */
   display: flex; /* ativa flexbox */
@@ -80,7 +80,6 @@
   width: 200px; /* tamanho */
 }
 
-/* ===== SUBTÍTULO (Front-End) ===== */
 .hero_detail h2 {
   font-size: 20px; /* tamanho menor */
   font-weight: 500; /* leve destaque */
@@ -88,8 +87,6 @@
   margin: 10px 0; /* espaço vertical */
 }
 
-
-/* ===== TEXTO DESCRITIVO ===== */
 .hero_detail p {
   font-size: 16px; /* tamanho padrão */
   line-height: 1.6; /* espaçamento entre linhas */
@@ -98,7 +95,6 @@
 }
 
 
-/* ===== IMAGEM  ===== */
 .hero-image {
   position: relative; /* base para posicionamentos futuros */
 }
@@ -126,7 +122,7 @@
   color: #5f7f63;
 }
 
-
+  
 
 /* ===== RESPONSIVIDADE (tablet) ===== */
 @media (max-width: 900px) {
