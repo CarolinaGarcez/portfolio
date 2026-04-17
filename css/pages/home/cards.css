@@ -2,7 +2,7 @@
 .projects {
   padding: 10px 0;
   background: linear-gradient(135deg, var(--primary-color), #3a5a40);
-   border-radius: 16px; /* cantos arredondados  */
+  border-radius: 16px; /* cantos arredondados  */
   overflow: hidden; /* pra garantir que nada vaze do container  */
 }
 /* CONTAINER */
