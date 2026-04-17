@@ -1,13 +1,24 @@
 .about {
   position: relative; /* trabalhar com camadas d */
-  padding: 100px 0;  /* espaço em cima e embaixo  */
+  padding: 10px 0;  /* espaço em cima e embaixo  */
   background: linear-gradient(135deg, var(--primary-color), #3a5a40);/* usei um degradê do meu verde  */
-
+border-radius: 16px; /* cantos arredondados  */
+  overflow: hidden; /* pra garantir que nada vaze do container  */
 }
-/* CARD  */
+/* TÍTULO*/
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2; /* garante que o título fique acima do fundo */
+  text-align: center;
+}
+
 
 .about-container {
-  max-width: 800px; 
+  max-width: 700px; 
   margin: 0 auto; 
   padding: 30px; 
   border-radius: 16px; 
@@ -17,12 +28,6 @@
   background: rgba(255, 255, 255, 0.95); /* fundo branco levemente transparente */
   backdrop-filter: blur(6px);  /* efeito de vidro (glass) */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* sombra pra dar profundidade  */
-}
-/* TÍTULO*/
-
-.about h2 {
-  font-size: 2.5rem; 
-  font-weight: 700;
 }
 
 /* DESTAQUE */
