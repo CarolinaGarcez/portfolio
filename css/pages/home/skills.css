@@ -1,32 +1,53 @@
-.skills {
-  padding: 80px 12%;
+/* SECTION */
+#skills {
+  padding: 60px 20px;
   text-align: center;
 }
 
-.skills h2 {
+/* TITULOS */
+#skills h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
-.skills-list {
+.skills-subtitle {
+  margin: 30px 0 15px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* CONTAINER */
+.skills-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
 }
 
-.skills-list span {
-  background: #f1f1f1;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
+/* CARD */
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  width: 120px;
   transition: 0.3s;
   cursor: default;
 }
 
-/* efeito bonito */
-.skills-list span:hover {
-  background: var(--primary-color);
-  color: #fff;
-  transform: translateY(-3px);
+/* ÍCONE */
+.skill-card i {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+/* TEXTO */
+.skill-card span {
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* HOVER */
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.05);
 }
