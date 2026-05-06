@@ -1,66 +1,93 @@
 /* ===== MONITOR GRANDE ===== */
+/* Aplica quando a tela for MENOR que 1200px (notebooks menores, telas reduzidas) */
 @media (max-width: 1200px) {
 
   .hero {
     padding: 0 6%;
+    /* diminui o espaçamento lateral (antes era maior)
+       → evita que o conteúdo fique “apertado” */
   }
 
   .title {
     font-size: 60px;
+    /* reduz o tamanho do nome (antes era ~70px)
+       → mantém proporção na tela menor */
   }
 
   .line2 {
     margin-left: 100px;
+    /* diminui o deslocamento lateral
+       → evita quebrar o layout */
   }
 
 }
 
 
 /* ===== TABLET ===== */
+/* Aplica em tablets e telas médias */
 @media (max-width: 1024px) {
 
   .hero {
     flex-direction: column;
+    /* muda de linha (lado a lado) → para coluna */
+    
     text-align: center;
+    /* centraliza o texto */
+
     padding: 40px 20px;
+    /* reduz espaçamento lateral */
   }
 
   .hero_detail {
     width: 100%;
+    /* ocupa toda largura */
+
     align-items: center;
+    /* centraliza os elementos internos */
   }
 
   .line2 {
     margin-left: 0;
+    /* remove deslocamento lateral */
+
     font-size: 55px;
+    /* reduz o tamanho */
   }
 
   .icon-pc {
     position: static;
+    /* remove posicionamento absoluto
+       → evita quebrar layout */
+
     margin-top: 10px;
   }
 
   .icon-pc img {
     width: 150px;
+    /* reduz tamanho do ícone */
   }
 
   .hero-image img {
     width: 280px;
     height: 280px;
+    /* imagem menor pra caber melhor */
   }
 
   .about-container {
     max-width: 90%;
+    /* evita container muito largo */
   }
 
 }
 
 
 /* ===== MOBILE ===== */
+/* Celulares padrão */
 @media (max-width: 768px) {
 
   .title {
     font-size: 42px;
+    /* reduz bastante o título */
   }
 
   .line2 {
@@ -70,41 +97,49 @@
   .hero_detail p {
     width: 100%;
     font-size: 14px;
+    /* texto mais compacto */
   }
 
   .hero-image img {
     width: 220px;
     height: 220px;
+    /* imagem menor */
   }
 
   .buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /* botões ficam um embaixo do outro */
   }
 
   .skill-card {
     width: 100px;
     padding: 15px;
+    /* cards menores */
   }
 
   .skill-card i {
     font-size: 35px;
+    /* ícone menor */
   }
 
   .footerBottom img {
     width: 180px;
     margin-bottom: -20px;
+    /* ajusta a logo do footer */
   }
 
 }
 
 
 /* ===== MOBILE PEQUENO ===== */
+/* Celulares menores */
 @media (max-width: 480px) {
 
   .title {
     font-size: 32px;
+    /* título bem menor */
   }
 
   .line2 {
@@ -113,25 +148,30 @@
 
   .hero {
     padding: 20px 15px;
+    /* menos espaço lateral */
   }
 
   .hero-image img {
     width: 180px;
     height: 180px;
+    /* imagem bem compacta */
   }
 
   .about-container {
     padding: 20px;
+    /* menos padding */
   }
 
   .skill-card {
     width: 90px;
+    /* cards menores ainda */
   }
 
   .scroll-down {
     bottom: 15px;
     right: 15px;
     font-size: 1.5rem;
+    /* seta menor e mais próxima da borda */
   }
 
 }
