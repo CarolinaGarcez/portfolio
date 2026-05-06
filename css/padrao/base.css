@@ -27,8 +27,11 @@ ol {
 
 body {
   background-color: var(--background-color); /* Aplica cor de fundo */
+  font-family: 'Inter', sans-serif; /* Define fonte para o corpo */
 }
 
-
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
 
 
