@@ -44,8 +44,6 @@
   font-weight: 600;
   color: var(--primary-color);
 }
-
-
 /* DARK MODE*/
 
 @media (prefers-color-scheme: dark) {

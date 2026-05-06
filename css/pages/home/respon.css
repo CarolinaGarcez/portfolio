@@ -1,0 +1,137 @@
+/* ===== MONITOR GRANDE ===== */
+@media (max-width: 1200px) {
+
+  .hero {
+    padding: 0 6%;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .line2 {
+    margin-left: 100px;
+  }
+
+}
+
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero_detail {
+    width: 100%;
+    align-items: center;
+  }
+
+  .line2 {
+    margin-left: 0;
+    font-size: 55px;
+  }
+
+  .icon-pc {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .icon-pc img {
+    width: 150px;
+  }
+
+  .hero-image img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-container {
+    max-width: 90%;
+  }
+
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 42px;
+  }
+
+  .line2 {
+    font-size: 42px;
+  }
+
+  .hero_detail p {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skill-card {
+    width: 100px;
+    padding: 15px;
+  }
+
+  .skill-card i {
+    font-size: 35px;
+  }
+
+  .footerBottom img {
+    width: 180px;
+    margin-bottom: -20px;
+  }
+
+}
+
+
+/* ===== MOBILE PEQUENO ===== */
+@media (max-width: 480px) {
+
+  .title {
+    font-size: 32px;
+  }
+
+  .line2 {
+    font-size: 32px;
+  }
+
+  .hero {
+    padding: 20px 15px;
+  }
+
+  .hero-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-container {
+    padding: 20px;
+  }
+
+  .skill-card {
+    width: 90px;
+  }
+
+  .scroll-down {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+  }
+
+}

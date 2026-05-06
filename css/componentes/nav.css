@@ -70,34 +70,3 @@ nav {
   display: none; /* Esconde o botão no desktop */
   cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
 }
-/* RESPONSIVO */
-@media (max-width: 1100px) {
-    .menu {
-    position: absolute; /* Fica sobre o conteúdo */
-    top: 80px; /* Logo abaixo do header */
-    left: 0; /* Encosta na esquerda */
-    width: 100%; /* Ocupa toda largura */
-
-    flex-direction: column; /* Menu vira vertical */
-    background: var(--nav-background-color); /* Cor de fundo */
-
-    height: 0; /* Começa fechado */
-    overflow: hidden; /* Esconde conteúdo */
-    transition: 0.4s; /* Animação de abrir */
-  }
-
-    .mobile-menu {
-    height: 250px; /* Altura quando o menu abre */
-    padding: 20px; /* Espaçamento interno */
-  }
-    .menu a {
-    color: var(--nav-text-color); /* Cor branca no mobile */
-  }
-    .bars {
-    display: block; /* Mostra o botão hambúrguer */
-    background: var(--primary-color); /* Cor de fundo */
-    color: #fff; /* Cor do ícone */
-    padding: 8px; /* Espaço interno */
-    border-radius: 5px; /* Bordas arredondadas */
-  }
-}
