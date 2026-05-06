@@ -1,7 +1,11 @@
 
 .projects {
   padding: 10px 0;
-  background: linear-gradient(135deg, var(--primary-color), #3a5a40);
+    background:
+    linear-gradient(135deg, rgba(95,127,99,0.8), rgba(58,90,64,0.8)),
+    url('../../../img/bg/verde.png');
+  background-size: cover; /* cobre todo o container  */
+  background-position: center; /* centraliza a imagem  */
   border-radius: 16px; /* cantos arredondados  */
   overflow: hidden; /* pra garantir que nada vaze do container  */
 }
