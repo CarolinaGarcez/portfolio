@@ -1,0 +1,21 @@
+.scroll-down {
+  position: fixed; /* fixa na tela */
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  z-index: 1000;
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-down a {
+  color: #fff; /* ajusta pro seu tema */
+  background: rgba(0,0,0,0.3);
+  padding: 10px 12px;
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.scroll-down a:hover {
+  transform: scale(1.1);
+}

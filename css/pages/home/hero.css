@@ -6,6 +6,7 @@
   align-items: center; 
   padding: 0 12%; /* espaçamento lateral */
   gap: 40px; /* espaço entre os blocos (texto e imagem) */
+  position: relative;
 }
 
 
