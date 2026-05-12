@@ -1,0 +1,238 @@
+/* =========================================================
+   TÍTULO PRINCIPAL
+========================================================= */
+
+h1 {
+
+  /* tamanho grande para destaque principal */
+  font-size: 64px;
+
+
+  /* peso médio para manter leveza */
+  font-weight: 500;
+
+
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+  /* espaçamento inferior */
+  margin-bottom: 20px;
+
+
+  /* aproxima as letras
+     deixando mais moderno */
+  letter-spacing: -2px;
+
+
+  /* cor principal do título */
+  color: #d9ffe3;
+
+
+  /* glow suave neon/cozy */
+  text-shadow:
+
+    /* brilho principal */
+    0 0 8px rgba(170,255,190,0.25),
+
+    /* brilho externo leve */
+    0 0 18px rgba(170,255,190,0.10);
+}
+
+
+/* =========================================================
+   SUBTÍTULO PRINCIPAL
+========================================================= */
+
+h2 {
+
+  /* permite comportamento de badge leve */
+  display: inline-block;
+
+
+  /* espaço inferior */
+  margin-bottom: 55px;
+
+
+  /* tamanho intermediário */
+  font-size: 22px;
+
+
+  /* peso leve */
+  font-weight: 400;
+
+
+  /* espaçamento das letras */
+  letter-spacing: 2px;
+
+
+  /* fonte terminal */
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+
+  /* cor suave e confortável */
+  color:
+    rgba(220,255,235,0.68);
+}
+
+
+/* =========================================================
+   BADGE
+   
+========================================================= */
+
+.badge-title h2 {
+
+  display: inline-block;
+
+
+  /* borda glass suave */
+  border:
+    1px solid var(--glass-border);
+
+
+  /* arredondamento */
+  border-radius: 8px;
+
+
+  /* espaçamento interno */
+  padding:
+    10px
+    25px;
+
+
+  /* tamanho menor */
+  font-size: 1rem;
+
+
+  /* peso leve */
+  font-weight: 300;
+
+
+  /* espaçamento vertical */
+  margin:
+    30px
+    0;
+
+
+  /* fundo transparente */
+  background:
+    rgba(255,255,255,0.03);
+}
+
+
+/* =========================================================
+   STATUS TEXT
+========================================================= */
+
+.status {
+
+  display: flex;
+
+
+  /* centraliza horizontal */
+  justify-content: center;
+
+
+  /* centraliza vertical */
+  align-items: center;
+
+
+  /* espaço entre dot e texto */
+  gap: 10px;
+
+
+  /* espaço inferior */
+  margin-bottom: 40px;
+
+
+  /* tamanho pequeno elegante */
+  font-size: 15px;
+
+
+  /* espaçamento das letras */
+  letter-spacing: 2px;
+
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+
+  /* cor suave */
+  color:
+    rgba(230,255,240,0.72);
+
+
+  /* animação respirando */
+  animation:
+    fadeStatus 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TEXTO INTERNO DO STATUS
+========================================================= */
+
+.status-text {
+
+  /* suaviza troca de frases */
+  transition:
+    opacity 0.4s ease-in-out;
+}
+
+
+/* =========================================================
+   DOT ONLINE
+========================================================= */
+
+.dot {
+
+  /* tamanho do ponto */
+  width: 6px;
+  height: 6px;
+
+
+  /* deixa circular */
+  border-radius: 50%;
+
+
+  /* cor neon principal */
+  background:
+    var(--neon-green);
+
+
+  /* glow suave */
+  box-shadow:
+    0 0 15px var(--neon-green);
+
+
+  /* efeito pulsando */
+  animation:
+    pulse 2s infinite;
+}
+
+
+/* =========================================================
+   TEXTO DESCRITIVO
+========================================================= */
+
+.description {
+
+  /* limita largura */
+  max-width: 520px;
+
+  /* centraliza */
+  margin:
+    0 auto 40px;
+
+  /* cor confortável */
+  color:
+    rgba(240,248,245,0.78);
+
+  line-height: 1.8;
+  font-size: 20px;
+
+  font-weight: 300;
+}

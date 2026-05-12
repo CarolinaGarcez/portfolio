@@ -1,0 +1,22 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+/* ===== RESET GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ===== BOTÕES E INPUTS ===== */
+button,
+input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+}

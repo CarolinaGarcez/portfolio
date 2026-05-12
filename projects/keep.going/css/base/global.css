@@ -1,0 +1,131 @@
+/* =========================================================
+   BODY PRINCIPAL
+   Estrutura base + background do keep.going()
+========================================================= */
+
+body {
+
+  /* ocupa no mínimo toda altura da tela */
+  min-height: 100vh;
+
+
+  /* layout principal em coluna */
+  display: flex;
+  flex-direction: column;
+
+
+  /* necessário para pseudo-elementos
+     e elementos absolutos internos */
+  position: relative;
+
+
+  /* evita scroll horizontal causado
+     por animações e efeitos visuais */
+  overflow-x: hidden;
+
+
+  /* =====================================================
+     BACKGROUND PRINCIPAL
+  ===================================================== */
+
+  /* imagem principal do fundo */
+  background:
+    url("../../img/index/bg.png");
+
+
+  /* faz a imagem cobrir toda a tela */
+  background-size: cover;
+
+
+  /* centraliza a imagem */
+  background-position: center;
+
+
+  /* impede repetição */
+  background-repeat: no-repeat;
+
+
+  /* cria leve efeito de profundidade
+     mantendo o fundo fixo */
+  background-attachment: fixed;
+
+
+  /* cor padrão dos textos */
+  color: var(--text-main);
+}
+
+
+/* =========================================================
+   CAMADA ATMOSFÉRICA
+   Cria leve sensação de névoa/umidade
+========================================================= */
+
+body::after {
+
+  /* obrigatório para pseudo-elemento aparecer */
+  content: "";
+
+
+  /* fixa a camada sobre toda tela */
+  position: fixed;
+
+
+  /* ocupa toda a viewport */
+  inset: 0;
+
+
+  /* camada branca MUITO suave
+     simulando luz/umidade */
+  background:
+    rgba(255,255,255,0.02);
+
+
+  /* impede bloquear cliques */
+  pointer-events: none;
+
+
+  /* mantém atrás do conteúdo */
+  z-index: 0;
+}
+
+
+/* =========================================================
+   VINHETA SUAVE
+   Escurece discretamente as bordas
+   para focar atenção no centro
+========================================================= */
+
+body::before {
+
+  /* obrigatório */
+  content: "";
+
+
+  /* fixa a camada na tela */
+  position: fixed;
+
+
+  /* ocupa toda a viewport */
+  inset: 0;
+
+
+  /* gradiente radial suave
+     centro mais claro
+     bordas mais escuras */
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(0,0,0,0.02) 15%,
+
+      rgba(0,0,0,0.22) 100%
+    );
+
+
+  /* não interfere nos cliques */
+  pointer-events: none;
+
+
+  /* mantém atrás do conteúdo */
+  z-index: 0;
+}

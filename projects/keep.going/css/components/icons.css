@@ -1,0 +1,35 @@
+/* === ESTILOS PARA O DIVISOR DE NUVEM === */
+.cloud-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espaço entre a nuvem e as linhas */
+  width: 100%;
+  max-width: 300px; /* Ajuste o tamanho total do divisor */
+  margin: 20px auto; /* Centraliza na tela */
+}
+
+.cloud-divider .line {
+  height: 1px;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.6); 
+  /* Adiciona um leve brilho para a linha " */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.cloud-divider .cloud-icon {
+  width: 24px;
+  height: auto;
+  /* Mesma opacidade da linha para manter a harmonia */
+  color: rgba(255, 255, 255, 0.6); 
+  stroke-width: 1.2px; 
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+.cloud-divider .line-left {
+  background: linear-gradient(to left, rgba(255,255,255,0.6), transparent);
+}
+
+.cloud-divider .line-right {
+  background: linear-gradient(to right, rgba(255,255,255,0.6), transparent);
+}

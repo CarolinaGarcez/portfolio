@@ -1,0 +1,163 @@
+/* =========================================================
+   CONTAINER DO RESULTADO
+========================================================= */
+
+.result-container {
+
+  /* ativa flexbox */
+  display: flex;
+
+  /* centraliza horizontalmente */
+  justify-content: center;
+
+  /* centraliza verticalmente */
+  align-items: center;
+
+  /* espaço acima do card */
+  margin-top: 40px;
+
+  /* começa invisível */
+  opacity: 0;
+
+  /* começa levemente para baixo */
+  transform: translateY(30px);
+
+  /* animação suave */
+  transition: all .6s ease;
+}
+
+
+/* =========================================================
+   ESTADO VISÍVEL
+   Quando JS adiciona a classe .show
+========================================================= */
+
+.result-container.show {
+
+  /* aparece */
+  opacity: 1;
+
+  /* sobe suavemente */
+  transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL DA FRASE
+========================================================= */
+
+.phrase-card {
+
+  /* largura responsiva */
+  width: 90%;
+
+  /* limite máximo */
+  max-width: 700px;
+
+  /* espaçamento interno */
+  padding: 35px;
+
+  /* bordas arredondadas */
+  border-radius: 30px;
+
+  /* fundo transparente glassmorphism */
+  background: rgba(255,255,255,0.08);
+
+  /* efeito blur atrás do card */
+  backdrop-filter: blur(14px);
+
+  /* borda suave transparente */
+  border: 1px solid rgba(255,255,255,0.1);
+
+  /* sombra suave */
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.25);
+
+  /* necessário para pseudo-elementos */
+  position: relative;
+
+  /* impede brilho escapar do card */
+  overflow: hidden;
+
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.phrase-card::before {
+
+  /* obrigatório para pseudo-elemento */
+  content: "";
+
+  /* posicionamento livre */
+  position: absolute;
+
+  /* tamanho do glow */
+  width: 250px;
+  height: 250px;
+
+  /* cor clara transparente */
+  background: rgba(255,255,255,.08);
+
+  /* formato circular */
+  border-radius: 50%;
+
+  /* blur forte */
+  filter: blur(80px);
+
+  /* posição do glow */
+  top: -80px;
+  right: -80px;
+
+}
+
+
+/* =========================================================
+   keep.going()
+========================================================= */
+
+.phrase-label {
+
+  /* tamanho pequeno */
+  font-size: 12px;
+
+  /* espaçamento entre letras */
+  letter-spacing: 4px;
+
+  /* tudo maiúsculo */
+  text-transform: uppercase;
+
+  /* cor suave */
+  color: rgba(255,255,255,.5);
+
+}
+
+
+/* =========================================================
+   TEXTO PRINCIPAL DA FRASE
+========================================================= */
+
+.phrase-text {
+
+  /* espaço acima */
+  margin-top: 18px;
+
+  /* fonte responsiva */
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+
+  /* espaçamento entre linhas */
+  line-height: 1.5;
+
+  /* peso médio */
+  font-weight: 500;
+
+  /* cor branca */
+  color: white;
+
+  /* centraliza texto */
+  text-align: center;
+
+}

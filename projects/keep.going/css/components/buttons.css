@@ -1,0 +1,163 @@
+/* =========================================================
+   BOTÃO PRINCIPAL
+========================================================= */
+
+button {
+
+  /* largura */
+  width: 320px;
+
+
+  /* espaçamento interno */
+  padding:
+    18px
+    35px;
+
+
+  /* arredondamento */
+  border-radius: 15px;
+
+
+  /* cursor */
+  cursor: pointer;
+
+
+  /* necessário para glow animado */
+  position: relative;
+
+  overflow: hidden;
+
+
+  /* =====================================================
+     FUNDO GLASS
+  ===================================================== */
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(180,255,220,0.10),
+
+      rgba(180,255,220,0.05)
+    );
+
+
+  /* borda suave */
+  border:
+    1px solid rgba(255,255,255,0.10);
+
+
+  /* blur glass */
+  backdrop-filter: blur(10px);
+
+
+  /* =====================================================
+     TEXTO
+  ===================================================== */
+
+  color: #e6ffec;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+  letter-spacing: 1px;
+
+
+  /* =====================================================
+     SOMBRAS
+  ===================================================== */
+
+  box-shadow:
+
+    /* glow interno */
+    inset 0 0 18px rgba(255,255,255,0.04),
+
+    /* glow externo */
+    0 0 20px rgba(180,255,220,0.08);
+
+
+  /* =====================================================
+     TRANSIÇÕES
+  ===================================================== */
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* =========================================================
+   REFLEXO DE LUZ
+========================================================= */
+
+button::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+
+      transparent,
+
+      rgba(255,255,255,0.08),
+
+      transparent
+    );
+
+  transition:
+    0.8s;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+button:hover {
+
+  transform:
+    translateY(-4px)
+    scale(1.015);
+
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(180,255,220,0.14),
+
+      rgba(180,255,220,0.08)
+    );
+
+
+  box-shadow:
+
+    inset 0 0 20px rgba(255,255,255,0.06),
+
+    0 0 30px rgba(180,255,220,0.16);
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DO REFLEXO
+========================================================= */
+
+button:hover::before {
+
+  left: 120%;
+}

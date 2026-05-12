@@ -1,0 +1,16 @@
+/* =========================================================
+   CONTAINER PRINCIPAL
+========================================================= */
+
+.container {
+
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding:
+    20px
+    20px
+    40px;
+}

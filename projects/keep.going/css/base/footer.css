@@ -1,0 +1,84 @@
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  
+
+}
+.footerContainer {
+  padding: 5px 0; /* Espaçamento vertical */
+ 
+}
+.socialIcons {
+  display: flex;/* Layout em linha */
+  gap: 15px;/* Espaço entre os ícones  */
+  
+}
+
+/* ===== BOTÃO DOS ÍCONES ===== */
+.socialIcons a {
+  width: 32px;  /* Largura fixa */
+  height: 32px;  /* Altura fixa  */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;  /* Deixa formato circular */
+  border: 1px solid #00ffcc;  /* Borda neon */
+  transition: 0.3s; /* Animação suave em hover */
+  box-shadow: 0 0 5px #00ffcc; /* Glow inicial leve */
+ 
+}
+
+/* ===== ÍCONE INTERNO ===== */
+.socialIcons a i {
+  font-size: 1rem;  /* Tamanho do ícone */
+  color: rgba(180,255,220,0.7);
+  transition: 0.3s;  /* Suaviza mudança de cor */
+ 
+}
+
+/* ===== HOVER NOS ÍCONES ===== */
+.socialIcons a:hover {
+  transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+  
+
+  box-shadow:
+    0 0 10px #00ffcc,
+    0 0 20px #00ffcc,
+    0 0 30px #00ffcc;
+  /* Glow forte em camadas (efeito neon real) */
+}
+
+.socialIcons a:hover i {
+  color: white;  /* fundo  */
+ 
+}
+
+.footerBottom {
+  width: 100%;
+  padding: 5px;
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.footerBottom p {
+  font-size: 1rem;
+  text-align: center;
+  color: rgba(180,255,220,0.7);
+  line-height: 1.5; /* espaço entre linhas */
+}
+
+.footerBottom .designer {
+  color: #b2df28;
+ 
+}
+

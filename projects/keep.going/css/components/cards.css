@@ -1,0 +1,67 @@
+/* =========================================================
+   CARD GLASS
+========================================================= */
+
+.glass-card {
+
+  /* largura responsiva */
+  width: 90%;
+
+  /* largura máxima */
+  max-width: 650px;
+
+
+  /* espaçamento interno */
+  padding: 30px;
+
+
+  /* cantos arredondados */
+  border-radius: 30px;
+
+
+  /* centraliza textos */
+  text-align: center;
+
+
+  /* =====================================================
+     FUNDO GLASS
+  ===================================================== */
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(30,35,45,0.45),
+
+      rgba(15,18,28,0.55)
+    );
+
+
+  /* borda suave */
+  border:
+    1px solid rgba(255,255,255,0.10);
+
+
+  /* blur do vidro */
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+
+  /* =====================================================
+     SOMBRAS
+  ===================================================== */
+
+  box-shadow:
+
+    /* brilho interno */
+    inset 0 0 20px rgba(255,255,255,0.03),
+
+    /* sombra externa */
+    0 0 40px rgba(0,0,0,0.35);
+
+
+  /* suaviza animações */
+  transition:
+    all 0.4s ease;
+}

@@ -1,0 +1,49 @@
+🌈 keep.going() — Motivação Aleatória
+✨ Sobre o projeto
+
+Uma pequena pausa digital para te lembrar de continuar.
+
+O keep.going() é um projeto simples e interativo que gera frases motivacionais e imagens aleatórias a cada clique, trazendo leveza e inspiração para o dia a dia.
+
+🧠 Funcionalidades
+Geração de frases motivacionais aleatórias
+Troca de imagens dinâmica
+Interface simples e responsiva
+Estrutura organizada em arquivos separados
+Código limpo e fácil de entender
+
+⚙️ Como funciona
+
+O projeto segue uma arquitetura simples:
+
+data-frases.js → contém todas as frases
+data-img.js → contém os caminhos das imagens
+result.js → contém a lógica que escolhe aleatoriamente os dados
+script.js → scripts de alerta e ações gerais
+
+🛠️ Tecnologias usadas
+HTML5
+CSS3
+JavaScript
+
+💡 Aprendizados
+Esse projeto foi desenvolvido para praticar:
+
+Manipulação do DOM
+Arrays e lógica aleatória
+Separação de responsabilidades no código
+✨ Autora
+
+Feito com 💙 por Carol
+Projeto de estudo e evolução em desenvolvimento front-end.
+
+📬 Contato
+LinkedIn: https://www.linkedin.com/in/carolinagarcez
+GitHub: https://github.com/CarolinaGarcez
+Instagram: https://www.instagram.com/mariacarolina.g.a/
+Portfólio: https://carolinagarcez.github.io/portfolio/
+
+💭 detalhe importante
+O nome keep.going() foi pensado como um lembrete simples:
+
+mesmo em dias difíceis, continua.
