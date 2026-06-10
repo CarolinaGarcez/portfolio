@@ -1,0 +1,24 @@
+/* =========================================================
+   EQUILIBRIVM EXPERIENCE - PONTO DE ENTRADA CSS PRINCIPAL
+   =========================================================
+   
+   Finalidade:
+     Módulo central que reúne todas as folhas de estilo do projeto.
+     Em vez de carregar múltiplos arquivos <link> no HTML, o index.html
+     carrega apenas este arquivo, que importa os demais submódulos.
+     
+   Módulos importados:
+     - global.css: resets, variáveis de design e comportamento do body.
+     - animations.css: transições, keyframes e efeitos de flip 3D.
+     - hero.css: cabeçalho hero, títulos, descrições e o rodapé.
+     - vinyl.css: estilização do vinil realista e rótulo do álbum.
+     - countdown.css: caixas de contagem regressiva flip e rótulos.
+     - responsive.css: media queries para celular e altura compacta.
+========================================================= */
+
+@import url('./global.css');
+@import url('./animations.css');
+@import url('./hero.css');
+@import url('./vinyl.css');
+@import url('./countdown.css');
+@import url('./responsive.css');

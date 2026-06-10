@@ -1,0 +1,75 @@
+/**
+ * Arquivo: css/global.css
+ * Finalidade: Módulo de estilos globais e variáveis de design.
+ * Responsabilidade:
+ *   - Resetar margens, preenchimentos e box-sizing padrão dos navegadores.
+ *   - Declarar as variáveis CSS para cores e fontes consistentes em todo o projeto.
+ *   - Estilizar os elementos raiz (html, body) sem rolagem vertical (overflow: hidden).
+ * Relação com outros módulos:
+ *   - Serve de base para todos os outros submódulos de estilo (hero, vinyl, countdown)
+ *     que utilizam as variáveis de fontes e cores aqui declaradas.
+ */
+
+/* ==========================================
+   RESET GLOBAL & BOX-SIZING
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   CONFIGURAÇÃO DE FONTES & CANVASES RAIZ
+   ========================================== */
+html {
+  background-color: #030303; /* Cor sólida preta de fundo por baixo do blur */
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* Garante que a página caiba em 100vh sem qualquer barra de rolagem */
+}
+
+/* ==========================================
+   ESTILIZAÇÃO DO BODY (FUNDO ESPECTRAL E VIDRO)
+   ========================================== */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: transparent; /* Permite ver as camadas de imagem e máscara abaixo */
+  gap: 20px; /* Garante distanciamento elegante entre o cronômetro e o rodapé */
+}
+
+/* Camada da imagem de fundo (capa do álbum esticada e borrada) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('../img/album.png');
+  background-size: cover;
+  background-position: center;
+  /* Capa desfocada e com brilho calibrado para excelente contraste */
+  filter: blur(6px) brightness(0.55) contrast(1.05);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Camada da máscara linear escura para legibilidade premium dos textos */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 3, 3, 0.25) 0%, rgba(3, 3, 3, 0.75) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+

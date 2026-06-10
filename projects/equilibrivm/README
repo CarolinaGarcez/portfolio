@@ -1,0 +1,44 @@
+# 🎧 Equilibrivm Experience
+
+Uma experiência digital inspirada na expectativa pela chegada da turnê Equilibrivm.
+
+O projeto foi desenvolvido como estudo de Front-End utilizando HTML, CSS e JavaScript, com o objetivo de transformar a contagem do tempo até o show em uma experiência visual interativa.
+
+## ✨ Funcionalidades atuais
+
+* Contagem regressiva em tempo real para o show de SP do dia 08 de agosto de 2026
+* Interface inspirada no universo musical
+* Animações suaves com CSS
+* Layout responsivo para diferentes dispositivos
+* Estrutura modular de CSS e JavaScript
+
+## 🎯 Objetivo do Projeto
+
+Mais do que exibir uma data, a proposta é representar visualmente minha expectativa e a ansiedade aguardando a chegada do dia do show.
+
+Esta versão do projeto utiliza uma experiência minimalista, combinando elementos visuais inspirados em plataformas de música com uma contagem regressiva dinâmica para o show em São Paulo.
+
+## 💻 Tecnologias
+
+* HTML5
+* CSS3
+* JavaScript
+* Git
+* GitHub
+
+## 📚 Objetivo de Aprendizado
+
+Este projeto faz parte dos meus estudos em desenvolvimento Front-End e foi criado para praticar:
+
+* Estruturação de interfaces
+* Organização modular de código
+* Animações com CSS
+* Manipulação do DOM com JavaScript
+* Responsividade
+* Boas práticas de desenvolvimento
+
+## 📌 Observação
+
+Este projeto é uma homenagem visual inspirada na expectativa pela turnê Equilibrivm.
+
+Não possui vínculo oficial com a artista ou sua equipe e não possui fins comerciais.

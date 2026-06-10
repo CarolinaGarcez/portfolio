@@ -1,0 +1,143 @@
+/**
+ * Arquivo: css/responsive.css
+ * Finalidade: Módulo de responsividade móvel e vertical.
+ * Responsabilidade:
+ *   - Tratar de telas compactas na horizontal (celulares).
+ *   - Tratar de telas compactas na vertical (telas de pouca altura, notebooks de 13 polegadas, etc.),
+ *     reescalando o vinil e os cartões para evitar barra de rolagem.
+ * Relação com outros módulos:
+ *   - Sobrescreve as propriedades de tamanho e margens dos componentes definidos
+ *     em global.css, hero.css, vinyl.css e countdown.css quando ativado.
+ */
+
+/* ==========================================
+   RESPONSIVIDADE VERTICAL (ALTURA DA TELA)
+   ========================================== */
+@media (max-height: 720px) {
+  .vinyl-container {
+    width: 160px; /* Reduzido de 195px para liberar espaço vertical e revelar o rodapé */
+    height: 160px;
+    margin-bottom: 6px;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+    margin-top: 3px;
+  }
+  .hero-tag {
+    margin-bottom: 4px;
+  }
+  .hero-description {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+  .countdown-title {
+    margin-bottom: 8px;
+  }
+  .countdown-container {
+    margin-bottom: 15px;
+    gap: 12px;
+  }
+  .flip-card {
+    width: 30px;
+    height: 48px; /* Ajustado de 50px */
+  }
+  .digit-num {
+    height: 48px;
+    line-height: 48px;
+    font-size: 1.85rem;
+  }
+  .event-info {
+    font-size: 0.78rem;
+    padding-top: 12px;
+  }
+  .music-footer {
+    padding: 5px 20px; /* Rodapé super encolhido */
+  }
+  .footerBottom img {
+    width: 110px; /* Reduzido na altura compacta para liberar espaço */
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE DE LARGURA (CELULAR)
+   ========================================== */
+@media (max-width: 600px) {
+  .vinyl-container {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-description {
+    font-size: 0.78rem;
+    max-width: 300px;
+    margin-bottom: 12px;
+  }
+
+  .countdown-container {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .countdown-group {
+    gap: 4px;
+  }
+
+  .digit-pair {
+    gap: 2px;
+  }
+
+  .flip-card {
+    width: 26px;
+    height: 44px;
+    border-radius: 4px;
+  }
+
+  .card-face, .top-flip, .bottom-flip {
+    border-radius: 4px;
+  }
+
+  .digit-num {
+    height: 44px;
+    line-height: 44px;
+    font-size: 1.6rem;
+  }
+
+  .countdown-title {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .event-info {
+    font-size: 0.75rem;
+    padding-top: 15px;
+    max-width: 240px;
+  }
+
+  .music-footer {
+    padding: 10px 15px;
+  }
+
+  .socialIcons {
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .socialIcons a {
+    font-size: 1.15rem;
+  }
+
+  .footerBottom img {
+    width: 115px;
+  }
+}

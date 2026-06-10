@@ -1,0 +1,128 @@
+/**
+ * Arquivo: css/hero.css
+ * Finalidade: Módulo de estilo do bloco Hero e Rodapé.
+ * Responsabilidade:
+ *   - Organizar a disposição do bloco central do site.
+ *   - Estilizar os cabeçalhos de título, tag e descrição em estilo sofisticado.
+ *   - Estilizar o rodapé de forma compacta para caber em 100vh de altura.
+ * Relação com outros módulos:
+ *   - Define a estrutura de posicionamento em que os módulos secundários (vinyl e countdown)
+ *     são organizados e renderizados.
+ */
+
+/* ==========================================
+   ESTRUTURA DA SEÇÃO PRINCIPAL (HERO)
+   ========================================== */
+.experience-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  z-index: 1;
+  padding: 10px 20px 25px 20px; /* Margem inferior ampliada para manter distância do rodapé */
+  min-height: 0; /* Permite redimensionar em janelas compactas */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ==========================================
+   TÍTULOS E DESCRIÇÕES
+   ========================================== */
+.hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.4rem; /* Reduzido de 2.8rem para liberar altura no layout 100vh */
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-bottom: 0;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 420px;
+  margin: 0 auto 12px auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================
+   RODAPÉ 
+   ========================================== */
+.music-footer {
+  width: 100%;
+  padding: 6px 20px; /* Altura de padding mínima para layout sem rolagem */
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(3, 3, 3, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  flex-shrink: 0; /* Garante que o rodapé não encolha ou quebre */
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.socialIcons a {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.35rem; /* Ícones sociais ampliados e nítidos */
+  transition: color 0.3s, transform 0.3s;
+}
+
+.socialIcons a:hover {
+  color: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.footerBottom img {
+  width: 155px; /* Logo da assinatura ampliada */
+  height: auto;
+  opacity: 0.85;
+}
+
+.footerBottom p {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+}
+
+.footerBottom .designer {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
