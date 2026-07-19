@@ -1,24 +1,4 @@
 
-body {
-  margin: 0; /* tiro a margem padrão do navegador pra não dar espaçamento estranho */
-  display: flex;/* uso flex em coluna porque meu layout é vertical  */
-  flex-direction: column;
-  min-height: 100vh;/* garante que ocupa a tela inteira */
-  
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-    url('../../img/game/capa-game.png'); /* fundo com imagem + camada escura por cima pra dar contraste */
-
-  /* faz a imagem cobrir toda a tela */
-  background-size: cover;
-
-  /* centraliza a imagem */
-  background-position: center;
-
-  /* fonte simples por enquanto */
-  font-family: sans-serif;
-}
-
 /* =========================
     ÁREA PRINCIPAL
    ========================= */
@@ -34,71 +14,28 @@ main {
   /* centraliza tudo horizontalmente */
   align-items: center;
 
-  /* distribui bem os elementos na tela (sem ficar tudo colado) */
-  justify-content: space-evenly;
+  justify-content: flex-start;  
+  
+  padding-bottom: 40px;
 
-  /* padding menor pra caber tudo sem scroll */
-  padding: 5px;
-
+padding: 10px;
   /* espaço entre header, título e grid */
-  gap: 10px;
+  gap: 5px
 }
 
 header {
-  display: flex;
 
-  /* alinha itens no centro verticalmente */
-  align-items: center;
+  padding: 10px 15px;
 
-  /* separa bem */
-  justify-content: space-between;
-
-  /* largura controlada */
-  width: 90%;
-  max-width: 700px;
-
-  /* espaço interno pra ficar confortável */
-  padding: 15px 20px;
-
-  /* borda arredondada */
-  border-radius: 12px;
-
-  /* fundo escuro transparente */
-  background: rgba(0, 0, 0, 0.75);
-
-  /* borda neon estilo game */
-  border: 2px solid #00ffcc;
-
-  /* cor do texto */
-  color: #00ffcc;
-
-  /* fonte menorzinha pra não pesar */
-  font-size: 0.85em;
-
-  /* glow leve */
-  box-shadow: 0 0 15px rgba(0,255,204,0.3);
+  font-size: 0.9em;
+  color: white;
+}
+.titulo img {
+  width: 100px;
 }
 
-
-/* =========================
-    GRID DO JOGO
-   ========================= */
-
-.grid {
-  display: grid;
-
-  /* 4 colunas iguais */
-  grid-template-columns: repeat(4, 1fr);
-
-  /* espaço entre as cartas */
-  gap: 50px;
-
-  /* largura responsiva */
-  width: 90%;
-  max-width: 500px;
-  margin-top: 10px;
-  /* pra caber tudo na tela */
-  height: 65vh;
+.titulo h1 {
+  font-size: 1em;
 }
 
 /* =========================
@@ -106,33 +43,48 @@ header {
    ========================= */
 
 .card {
-  aspect-ratio: 3/4; /* mantém proporção padrão das cartas */
+
+  aspect-ratio: 3/4;
+
+  width: 100%;
+
   border-radius: 10px;
-  /* necessário pro efeito de virar */
+
   position: relative;
+
   transform-style: preserve-3d;
 
-  /* animação suave */
- transition: transform .3s ease;
+  transition: transform .3s ease;
+
   will-change: transform;
 
   cursor: pointer;
 
-  /* glow leve */
   box-shadow: 0 0 8px rgba(0,255,204,0.2);
 
-  /* ocupa toda célula do grid */
-  width: 100%;
-  height: 100%;
-
-   contain: layout paint; /* otimização de renderização */
+  contain: layout paint;
 }
 
 .card:hover {
   filter: brightness(1.1);
 }
 
+.grid {
 
+  display: grid;
+
+  gap: 12px;
+
+  width: 90%;
+
+  max-width: 750px;
+
+  margin: 10px auto;
+
+  padding: 10px;
+
+  justify-items: center;
+}
 /* =========================
     FACES DA CARTA
    ========================= */
@@ -203,7 +155,45 @@ header {
   opacity: 0.5;
 }
 
+/* =========================
+   BOTÕES 
+========================= */
 
+.buttons{
+  display:flex;
+  gap:10px;
+}
+
+/* botão voltar */
+.back-button{
+
+  text-decoration:none;
+
+  background:transparent;
+
+  color:#00ffcc;
+
+  border:1px solid #00ffcc;
+
+  padding:5px 10px;
+
+  border-radius:6px;
+
+  transition:.3s ease;
+
+  font-size:.9em;
+}
+
+/* hover */
+.back-button:hover{
+
+  background:#00ffcc;
+
+  color:black;
+
+  box-shadow:
+    0 0 10px #00ffcc;
+}
 /* =========================
     RESET
    ========================= */

@@ -1,0 +1,26 @@
+
+body {
+  margin: 0; /* tiro a margem padrão do navegador pra não dar espaçamento estranho */
+  display: flex;/* uso flex em coluna porque meu layout é vertical  */
+  flex-direction: column;
+  min-height: 100vh;/* garante que ocupa a tela inteira */
+  
+   background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url('../../../img/cards/fase2/bg-fase2.png') no-repeat;
+  /* coloquei um fundo com imagem + um degradê escuro por cima pra dar contraste */
+  background-size: cover; 
+  background-position: center; 
+  /* centraliza a imagem no meio da tela */
+
+  /* fonte simples por enquanto */
+  font-family: sans-serif;
+}
+.grid{
+  grid-template-columns: repeat(4,1fr);
+  max-width:850px;
+}
+
+.card{
+  max-width:120px;
+}

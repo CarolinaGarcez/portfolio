@@ -11,8 +11,10 @@
 /* ===== LAYOUT ===== */
 
 @import url('./componentes/footer.css');
+@import url('./pages/vitoria.css');
 @import url('./pages/game.css');
-@import url('./pages/index.css');
+@import url('./componentes/loading.css');
+
 
 
 

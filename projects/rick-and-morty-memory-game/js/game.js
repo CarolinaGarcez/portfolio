@@ -1,53 +1,26 @@
-const grid = document.querySelector('.grid');
-const spanPlayer = document.querySelector('.player');
-const timer = document.querySelector('.timer');
-const resetButton = document.querySelector('.reset');
-
-
-const characters = [
-  'toy',
-  'self',
-  'mortycoringa',
-  'prison',
-  'robin',
-  'psicodelico',
-];
-
-/* FUNÇÃO PRA CRIAR ELEMENTO */
-const createElement = (tag, className) => {
-  const element = document.createElement(tag);
-  element.className = className;
-  return element;
-}
-
-/* CONTROLE DO JOGO */
-let firstCard = '';
-let secondCard = '';
-let lockBoard = false;
-
-/* FIM DE JOGO */
-const checkEndGame = () => {/* =========================================================
+/* =========================================================
    ELEMENTOS DA TELA
 ========================================================= */
 
 const grid = document.querySelector('.grid');
-const spanPlayer = document.querySelector('.player');
-const timer = document.querySelector('.timer');
-const resetButton = document.querySelector('.reset');
 
+const spanPlayer =
+  document.querySelector('.player');
 
-/* =========================================================
-   CARTAS DO JOGO
-========================================================= */
+const timer =
+  document.querySelector('.timer');
 
-const characters = [
-  'toy',
-  'self',
-  'mortycoringa',
-  'prison',
-  'robin',
-  'psicodelico',
-];
+const resetButton =
+  document.querySelector('.reset');
+
+const winScreen =
+  document.querySelector('.win-screen');
+
+const winText =
+  document.querySelector('.win-text');
+
+const nextPhase =
+  document.querySelector('.next-phase');
 
 
 /* =========================================================
@@ -56,7 +29,9 @@ const characters = [
 
 const createElement = (tag, className) => {
 
-  const element = document.createElement(tag);
+  const element =
+    document.createElement(tag);
+
   element.className = className;
 
   return element;
@@ -67,47 +42,75 @@ const createElement = (tag, className) => {
    CONTROLE DO JOGO
 ========================================================= */
 
-/* Primeira carta clicada */
+/* primeira carta */
 let firstCard = null;
 
-/* Segunda carta clicada */
+/* segunda carta */
 let secondCard = null;
 
-/* Bloqueia o tabuleiro durante comparação */
+/* trava cliques */
 let lockBoard = false;
 
-/* Controle do timer */
+/* timer */
 let loop;
 
 
 /* =========================================================
-   VERIFICA SE O JOGO TERMINOU
+   VERIFICA FIM DE JOGO
 ========================================================= */
 
 const checkEndGame = () => {
 
-  /* Procura cartas desabilitadas */
-  const disabledCards = document.querySelectorAll('.disabled-card');
+  const disabledCards =
+    document.querySelectorAll('.disabled-card');
 
-  /* Se encontrou os 12 pares */
-  if (disabledCards.length === 12) {
+  const totalCards =
+    gameConfig.characters.length * 2;
+
+  if (disabledCards.length === totalCards) {
 
     clearInterval(loop);
 
-    alert(
-      `Parabéns, ${spanPlayer.innerHTML}! Tempo: ${timer.innerHTML}s`
-    );
+    const winTitle =
+      document.querySelector('.win-box h2');
+
+    if (gameConfig.finalPhase) {
+
+      winTitle.innerHTML =
+        '⚠️ CITADEL COLLAPSE ⚠️';
+
+      winText.innerHTML = `
+        ${spanPlayer.innerHTML},
+        você escapou do colapso da Citadel.
+
+        O portal para o multiverso foi aberto.
+      `;
+
+      nextPhase.innerHTML =
+        '🌀 Entrar no Portal';
+
+    } else {
+
+      winTitle.innerHTML =
+        'WUBBA LUBBA DUB DUB! 🚀';
+
+      winText.innerHTML =
+        `${spanPlayer.innerHTML}, você venceu em ${timer.innerHTML}s 🚀`;
+
+      nextPhase.innerHTML =
+        'Próxima Fase';
+    }
+
+    winScreen.classList.remove('hidden');
   }
 };
 
-
 /* =========================================================
-   COMPARA AS DUAS CARTAS
+   COMPARA CARTAS
 ========================================================= */
 
 const checkCards = () => {
 
-  /* Pega o personagem de cada carta */
   const firstCharacter =
     firstCard.getAttribute('data-character');
 
@@ -115,79 +118,79 @@ const checkCards = () => {
     secondCard.getAttribute('data-character');
 
 
-  /* =====================================================
-     SE AS CARTAS FOREM IGUAIS
-  ===================================================== */
+  /* =========================================
+     CARTAS IGUAIS
+  ========================================= */
 
   if (firstCharacter === secondCharacter) {
 
-    /* Desabilita as cartas */
-    firstCard.firstChild.classList.add('disabled-card');
-    secondCard.firstChild.classList.add('disabled-card');
+    firstCard.firstChild
+      .classList.add('disabled-card');
 
-    /* Limpa seleção */
+    secondCard.firstChild
+      .classList.add('disabled-card');
+
     firstCard = null;
     secondCard = null;
 
-    /* Libera tabuleiro */
     lockBoard = false;
 
-    /* Verifica vitória */
     checkEndGame();
 
   } else {
 
-    /* =====================================================
-       SE AS CARTAS FOREM DIFERENTES
-    ===================================================== */
+    /* =========================================
+       CARTAS DIFERENTES
+    ========================================= */
 
     setTimeout(() => {
 
-      /* Remove efeito de carta virada */
-      firstCard.classList.remove('reveal-card');
-      secondCard.classList.remove('reveal-card');
+      firstCard.classList
+        .remove('reveal-card');
 
-      /* Limpa seleção */
+      secondCard.classList
+        .remove('reveal-card');
+
       firstCard = null;
       secondCard = null;
 
-      /* Libera tabuleiro */
       lockBoard = false;
 
-    }, 300); // ↓ reduzido de 500ms para 300ms
+    }, 500);
   }
 };
 
 
 /* =========================================================
-   FUNÇÃO DE VIRAR CARTA
+   VIRAR CARTA
 ========================================================= */
 
 const revealCard = ({ target }) => {
 
-  /* Impede clique durante animação */
+  /* trava animação */
   if (lockBoard) return;
 
-  /* Procura a carta corretamente */
-  const card = target.closest('.card');
+  const card =
+    target.closest('.card');
 
-  /* Segurança */
   if (!card) return;
 
-  /* Impede clicar na mesma carta */
-  if (card.classList.contains('reveal-card')) return;
+  /* impede clicar na mesma */
+  if (
+    card.classList.contains('reveal-card')
+  ) return;
 
 
-  /* =====================================================
-     VIRA A CARTA
-  ===================================================== */
+  /* =========================================
+     VIRA CARTA
+  ========================================= */
 
   card.classList.add('reveal-card');
 
 
-  /* =====================================================
+  /* =========================================
      PRIMEIRA CARTA
-  ===================================================== */
+  ========================================= */
 
   if (!firstCard) {
 
@@ -197,16 +200,14 @@ const revealCard = ({ target }) => {
   }
 
 
-  /* =====================================================
+  /* =========================================
      SEGUNDA CARTA
-  ===================================================== */
+  ========================================= */
 
   secondCard = card;
 
-  /* Bloqueia novos cliques */
   lockBoard = true;
 
-  /* Compara cartas */
   checkCards();
 };
 
@@ -217,58 +218,78 @@ const revealCard = ({ target }) => {
 
 const createCard = (character) => {
 
-  /* Estrutura da carta */
-  const card = createElement('div', 'card');
+  const card =
+    createElement('div', 'card');
 
-  /* Frente */
-  const front = createElement('div', 'face front');
+  const front =
+    createElement('div', 'face front');
 
-  /* Verso */
-  const back = createElement('div', 'face back');
+  const back =
+    createElement('div', 'face back');
 
 
-  /* Imagem da carta */
+  /* =========================================
+     IMAGEM DA CARTA
+  ========================================= */
+
   front.style.backgroundImage =
-    `url('../img/cards/${character}.png')`;
+    `url('${gameConfig.cardPath}${character}.png')`;
 
 
-  /* Monta estrutura */
+  /* =========================================
+     MONTA CARTA
+  ========================================= */
+
   card.appendChild(front);
   card.appendChild(back);
 
+  card.setAttribute(
+    'data-character',
+    character
+  );
 
-  /* Evento de clique */
-  card.addEventListener('click', revealCard);
-
-
-  /* Identificação */
-  card.setAttribute('data-character', character);
+  card.addEventListener(
+    'click',
+    revealCard
+  );
 
   return card;
 };
 
 
 /* =========================================================
-   CARREGA O JOGO
+   CARREGA JOGO
 ========================================================= */
 
 const loadGame = () => {
 
-  /* Duplica cartas para formar pares */
   const duplicateCharacters = [
-    ...characters,
-    ...characters
+
+    ...gameConfig.characters,
+
+    ...gameConfig.characters
+
   ];
 
-  /* Embaralha */
+
+  /* =========================================
+     EMBARALHA
+  ========================================= */
+
   const shuffledArray =
-    duplicateCharacters.sort(() => Math.random() - 0.5);
+    duplicateCharacters.sort(
+      () => Math.random() - 0.5
+    );
 
 
-  /* Cria cartas na tela */
+  /* =========================================
+     CRIA CARTAS
+  ========================================= */
+
   shuffledArray.forEach((character) => {
 
-    const card = createCard(character);
+    const card =
+      createCard(character);
 
     grid.appendChild(card);
   });
@@ -294,140 +315,61 @@ const startTimer = () => {
 
 
 /* =========================================================
-   BOTÃO RESET
+   RESET
 ========================================================= */
 
 resetButton.addEventListener('click', () => {
 
   window.location.reload();
+
 });
 
 
 /* =========================================================
-   INICIA O JOGO
+   PRÓXIMA FASE
+========================================================= */
+
+nextPhase.addEventListener('click', () => {
+
+  if (gameConfig.finalPhase) {
+
+    document.body.classList
+      .add('final-transition');
+
+    setTimeout(() => {
+
+      window.location.href =
+        gameConfig.nextPage;
+
+    }, 3000);
+
+    return;
+  }
+
+  window.location.href =
+    gameConfig.nextPage;
+
+});
+
+
+/* =========================================================
+   INICIA JOGO
 ========================================================= */
 
 window.onload = () => {
 
-  /* Nome do jogador */
+  /* nome jogador */
   spanPlayer.innerHTML =
-    localStorage.getItem('player') || 'Jogador';
 
-  /* Inicia timer */
+    localStorage.getItem('player')
+
+    || 'Jogador';
+
+
+  /* inicia timer */
   startTimer();
 
-  /* Carrega cartas */
+
+  /* carrega cartas */
   loadGame();
 };
-  const disabledCards = document.querySelectorAll('.disabled-card');
-
-  if (disabledCards.length === 12) { // 
-    clearInterval(this.loop);
-    alert(`Parabéns, ${spanPlayer.innerHTML}! Tempo: ${timer.innerHTML}s`);
-  }
-}
-
-/* COMPARA CARTAS */
-const checkCards = () => {
-  const firstCharacter = firstCard.getAttribute('data-character');
-  const secondCharacter = secondCard.getAttribute('data-character');
-
-  if (firstCharacter === secondCharacter) {
-
-    firstCard.firstChild.classList.add('disabled-card');
-    secondCard.firstChild.classList.add('disabled-card');
-
-    firstCard = '';
-    secondCard = '';
-    lockBoard = false;
-
-    checkEndGame();
-
-  } else {
-    setTimeout(() => {
-
-      firstCard.classList.remove('reveal-card');
-      secondCard.classList.remove('reveal-card');
-
-      firstCard = '';
-      secondCard = '';
-      lockBoard = false;
-
-    }, 500);
-  }
-}
-
-/* AO CLICAR NA CARTA */
-const revealCard = ({ target }) => {
-
-  if (lockBoard) return;
-
-  const card = target.parentNode;
-
-  if (card.classList.contains('reveal-card')) return;
-
-  if (firstCard === '') {
-    card.classList.add('reveal-card');
-    firstCard = card;
-
-  } else if (secondCard === '') {
-    card.classList.add('reveal-card');
-    secondCard = card;
-
-    lockBoard = true;
-    checkCards();
-  }
-}
-
-/* CRIA CARTA */
-const createCard = (character) => {
-
-  const card = createElement('div', 'card');
-  const front = createElement('div', 'face front');
-  const back = createElement('div', 'face back');
-
- 
-  front.style.backgroundImage = `url('../img/cards/${character}.png')`;
-
-  card.appendChild(front);
-  card.appendChild(back);
-
-  card.addEventListener('click', revealCard);
-  card.setAttribute('data-character', character);
-
-  return card;
-}
-
-/* CARREGA JOGO */
-const loadGame = () => {
-  const duplicateCharacters = [...characters, ...characters];
-
-  const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
-
-  shuffledArray.forEach((character) => {
-    const card = createCard(character);
-    grid.appendChild(card);
-  });
-}
-
-/* TIMER */
-const startTimer = () => {
-  let time = 0;
-
-  this.loop = setInterval(() => {
-    time++;
-    timer.innerHTML = time;
-  }, 1000);
-}
-
-/* RESET */
-resetButton.addEventListener('click', () => {
-  window.location.reload();
-});
-
-/* START */
-window.onload = () => {
-  spanPlayer.innerHTML = localStorage.getItem('player') || 'Jogador';
-  startTimer();
-  loadGame();
-}

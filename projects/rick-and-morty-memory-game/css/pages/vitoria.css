@@ -1,0 +1,74 @@
+.win-screen{
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,.85);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:999;
+}
+
+.hidden{
+  display:none;
+}
+
+.win-box{
+  background:#111;
+
+  border:2px solid #00ffcc;
+
+  padding:40px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:0 0 30px rgba(0,255,204,.5);
+
+  animation: popup .4s ease;
+}
+
+.win-box h2{
+  color:#b2df28;
+
+  margin-bottom:10px;
+
+  text-shadow:0 0 10px #00ffcc;
+}
+
+.win-text{
+  color:white;
+  margin-bottom:20px;
+}
+
+.next-phase{
+  background:#00ffcc;
+
+  color:black;
+
+  border:none;
+
+  padding:12px 20px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-weight:bold;
+}
+
+@keyframes popup{
+
+  from{
+    transform:scale(.7);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}

@@ -1,31 +1,46 @@
 body {
-  display: flex; 
-  flex-direction: column;  /* tudo fica um embaixo do outro (form + footer) */
-  height: 100vh;  /* ocupa exatamente a altura da tela */
+
+  display: flex;
+
+  flex-direction: column;
+
+  height: 100vh;
+
   overflow: hidden;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.85)
+    ),
     url('../../img/index/capa-inicial.png');
-  /* coloquei um fundo com imagem + um degradê escuro por cima pra dar contraste */
-  background-size: cover; 
-  background-position: center; 
-  /* centraliza a imagem no meio da tela */
+
+  background-size: cover;
+
+  background-position: center;
+
+  animation:
+    psychedelic 12s linear infinite;
 }
 
 .login-form {
-  flex: 1; 
-  /* faz o form ocupar todo espaço disponível */
+
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  /* centralizei tudo no meio da tela */
 
   padding: 10px;
-  /* dei um respiro nas bordas */
 
   overflow: hidden;
-  /* evita que o conteúdo estoure e empurre o footer */
 }
 
 .login-box {
@@ -38,8 +53,9 @@ body {
   border: 2px solid #00ffcc; 
   /* borda neon */
 
-  box-shadow: 0 0 25px #00ffcc; 
-  /* brilho em volta (glow) */
+box-shadow:
+  0 0 25px #00ffcc,
+  0 0 60px rgba(0,255,204,.25);
 
   padding: 20px;
   border-radius: 15px;
@@ -155,4 +171,112 @@ body {
 
   box-shadow: 0 0 15px #00ffcc;
   /* glow mais forte no hover */
+}
+/* =========================================================
+   PORTAL
+========================================================= */
+
+.portal-bg{
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width: 650px;
+
+  height: 650px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #7cff00 0%,
+      #00ffcc 30%,
+      transparent 70%
+    );
+
+  filter: blur(35px);
+
+  opacity: .28;
+
+  animation:
+    spin 12s linear infinite,
+    pulse 5s ease infinite;
+
+  z-index: 0;
+}
+footer{
+  position: relative;
+  z-index: 2;
+}
+.intro-text{
+
+  color:white;
+
+  text-align:center;
+
+  font-size:.9em;
+
+  line-height:1.5;
+
+  max-width:280px;
+
+  opacity:.9;
+
+  margin-top:10px;
+
+}
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes spin {
+
+  from {
+
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,100% {
+
+    scale: 1;
+  }
+
+  50% {
+
+    scale: 1.08;
+  }
+}
+
+@keyframes psychedelic {
+
+  0% {
+
+    filter:
+      hue-rotate(0deg);
+  }
+
+  100% {
+
+    filter:
+      hue-rotate(360deg);
+  }
 }
