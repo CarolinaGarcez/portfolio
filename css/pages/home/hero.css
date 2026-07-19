@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-size: 70px; /* tamanho grande do nome */
+  font-size: clamp(35px, 6vw, 75px); /* tamanho fluido para responsividade */
   font-weight: 700; /* negrito forte */
   line-height: 1.1; /* altura entre linhas */
   color: var(--text-color); /* cor padrão do texto */
@@ -33,11 +33,11 @@
 
 /* segunda linha  */
 .line2 {
-  font-size: 75px;
+  font-size: clamp(35px, 6vw, 75px);
   align-items: center; /* alinha verticalmente */
   gap: 20px; /* espaço entre nome e ícone */
   display: block;
-  margin-left: 200px;
+  margin-left: 5%; /* margem relativa ao invés de fixa */
 }
 .highlight {
   color: var(--primary-color); /* cor principal */
@@ -72,13 +72,14 @@
 
 /* ===== ÍCONE DO PC ===== */
 .icon-pc {
-  position: absolute;
-  left: 250px; /* ajusta layout */
-  top: -35px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-top: -25px;
 }
 
 .icon-pc img {
-  width: 200px; /* tamanho */
+  width: clamp(100px, 12vw, 200px); /* tamanho fluido */
 }
 
 .hero_detail h2 {

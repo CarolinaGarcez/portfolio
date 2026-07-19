@@ -1,177 +1,148 @@
 /* ===== MONITOR GRANDE ===== */
-/* Aplica quando a tela for MENOR que 1200px (notebooks menores, telas reduzidas) */
 @media (max-width: 1200px) {
-
   .hero {
     padding: 0 6%;
-    /* diminui o espaçamento lateral (antes era maior)
-       → evita que o conteúdo fique “apertado” */
   }
-
   .title {
     font-size: 60px;
-    /* reduz o tamanho do nome (antes era ~70px)
-       → mantém proporção na tela menor */
   }
-
   .line2 {
     margin-left: 100px;
-    /* diminui o deslocamento lateral
-       → evita quebrar o layout */
   }
-
 }
 
-
-/* ===== TABLET ===== */
-/* Aplica em tablets e telas médias */
+/* ===== TABLET / MENU MOBILE ===== */
 @media (max-width: 1024px) {
-
   .hero {
     flex-direction: column;
-    /* muda de linha (lado a lado) → para coluna */
-    
     text-align: center;
-    /* centraliza o texto */
-
     padding: 40px 20px;
-    /* reduz espaçamento lateral */
   }
-
   .hero_detail {
     width: 100%;
-    /* ocupa toda largura */
-
     align-items: center;
-    /* centraliza os elementos internos */
   }
-
   .line2 {
     margin-left: 0;
-    /* remove deslocamento lateral */
-
     font-size: 55px;
-    /* reduz o tamanho */
   }
-
   .icon-pc {
     position: static;
-    /* remove posicionamento absoluto
-       → evita quebrar layout */
-
     margin-top: 10px;
   }
-
   .icon-pc img {
     width: 150px;
-    /* reduz tamanho do ícone */
   }
-
   .hero-image img {
     width: 280px;
     height: 280px;
-    /* imagem menor pra caber melhor */
   }
-
   .about-container {
     max-width: 90%;
-    /* evita container muito largo */
   }
-
 }
 
-
 /* ===== MOBILE ===== */
-/* Celulares padrão */
 @media (max-width: 768px) {
-
-  .title {
-    font-size: 42px;
-    /* reduz bastante o título */
+  /* Menu Mobile */
+  .bars {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    z-index: 1000;
+  }
+  .menu {
+    position: absolute;
+    top: 120px; /* altura do header */
+    left: -100%; /* esconde o menu fora da tela */
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--nav-background-color);
+    padding: 20px 0;
+    transition: left 0.4s ease-in-out;
+    z-index: 999;
   }
 
-  .line2 {
-    font-size: 42px;
+  .menu.mobile-menu {
+    left: 0; /* mostra o menu na tela */
+  }
+
+  .menu a {
+    color: var(--nav-text-color);
+  }
+
+  .menu a::after {
+    background: var(--nav-text-color);
+  }
+  
+  /* Fix pra dark mode */
+  body.dark-mode .menu {
+    background-color: var(--nav-background-color);
   }
 
   .hero_detail p {
     width: 100%;
     font-size: 14px;
-    /* texto mais compacto */
   }
-
   .hero-image img {
     width: 220px;
     height: 220px;
-    /* imagem menor */
   }
-
   .buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* botões ficam um embaixo do outro */
   }
-
   .skill-card {
     width: 100px;
     padding: 15px;
-    /* cards menores */
   }
-
   .skill-card i {
     font-size: 35px;
-    /* ícone menor */
   }
-
   .footerBottom img {
     width: 180px;
     margin-bottom: -20px;
-    /* ajusta a logo do footer */
   }
-
+  
+  /* Corrige grid de projetos no mobile */
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
-
 /* ===== MOBILE PEQUENO ===== */
-/* Celulares menores */
 @media (max-width: 480px) {
-
-  .title {
-    font-size: 32px;
-    /* título bem menor */
-  }
-
-  .line2 {
-    font-size: 32px;
-  }
-
   .hero {
     padding: 20px 15px;
-    /* menos espaço lateral */
   }
-
   .hero-image img {
     width: 180px;
     height: 180px;
-    /* imagem bem compacta */
   }
-
   .about-container {
     padding: 20px;
-    /* menos padding */
   }
-
   .skill-card {
     width: 90px;
-    /* cards menores ainda */
   }
-
   .scroll-down {
     bottom: 15px;
     right: 15px;
     font-size: 1.5rem;
-    /* seta menor e mais próxima da borda */
   }
+}
 
+/* ===== MICRO TELAS (320px) ===== */
+@media (max-width: 360px) {
+  .title {
+    font-size: 28px;
+  }
+  .line2 {
+    font-size: 28px;
+  }
+  .hero-image img {
+    width: 150px;
+    height: 150px;
+  }
 }
