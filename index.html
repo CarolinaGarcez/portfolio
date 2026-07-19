@@ -25,17 +25,20 @@
 <body>
 
  <!-- Botão de alternar tema --> 
-  <i class="fa-solid fa-moon" id="toggle-theme"></i>
+  <button id="toggle-theme" class="theme-toggle-btn" aria-label="Alternar tema escuro e claro" title="Alternar tema escuro e claro">
+    <i class="fa-solid fa-moon"></i>
+  </button>
    <!-- Lista de redes sociais (fica fixa na lateral) --> 
 <ul class="example-2">
   <li class="icon-content">
     <a
       data-social="linkedin"
       aria-label="LinkedIn"
-      href="https://www.linkedin.com/in/carolinagarcez"target="_blank" rel="noopener noreferrer"
+      href="https://www.linkedin.com/in/carolinagarcez" target="_blank" rel="noopener noreferrer"
     >
       <div class="filled"></div>
       <svg
+        aria-hidden="true"
         xml:space="preserve"
         viewBox="0 0 16 16"
         class="bi bi-linkedin"
@@ -53,9 +56,10 @@
     <div class="tooltip">LinkedIn</div>
   </li>
   <li class="icon-content">
-    <a data-social="github" aria-label="GitHub" href="https://github.com/CarolinaGarcez"target="_blank" rel="noopener noreferrer">
+    <a data-social="github" aria-label="GitHub" href="https://github.com/CarolinaGarcez" target="_blank" rel="noopener noreferrer">
       <div class="filled"></div>
       <svg
+        aria-hidden="true"
         xml:space="preserve"
         viewBox="0 0 16 16"
         class="bi bi-github"
@@ -76,10 +80,11 @@
     <a
       data-social="instagram"
       aria-label="Instagram"
-      href="https://www.instagram.com/mariacarolina.g.a/"target="_blank" rel="noopener noreferrer"
+      href="https://www.instagram.com/mariacarolina.g.a/" target="_blank" rel="noopener noreferrer"
     >
       <div class="filled"></div>
       <svg
+        aria-hidden="true"
         xml:space="preserve"
         viewBox="0 0 16 16"
         class="bi bi-instagram"
@@ -133,7 +138,7 @@
   <span class="line2">
     <span class="highlight">Garcez</span>
     <span class="icon-pc">
-      <img src="img/pc.png" alt="pc" />
+      <img src="img/pc.webp" alt="Ícone decorativo de um computador" />
     </span>
   </span>
 </h1>
@@ -209,18 +214,18 @@
   <h3 class="skills-subtitle">Front-end</h3>
   <div class="skills-container">
 
-    <div class="skill-card animate-section">
-      <i class="devicon-html5-plain colored"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="devicon-html5-plain colored"></i>
       <span>HTML</span>
     </div>
 
-    <div class="skill-card animate-section">
-      <i class="devicon-css3-plain colored"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="devicon-css3-plain colored"></i>
       <span>CSS</span>
     </div>
 
-    <div class="skill-card animate-section">
-      <i class="devicon-javascript-plain colored"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="devicon-javascript-plain colored"></i>
       <span>JavaScript</span>
     </div>
 
@@ -230,18 +235,18 @@
   <h3 class="skills-subtitle">Ferramentas</h3>
   <div class="skills-container">
 
-    <div class="skill-card animate-section">
-      <i class="devicon-git-plain colored"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="devicon-git-plain colored"></i>
       <span>Git</span>
     </div>
 
-    <div class="skill-card animate-section">
-      <i class="devicon-github-original"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="devicon-github-original"></i>
       <span>GitHub</span>
     </div>
 
-    <div class="skill-card animate-section">
-      <i class="devicon-vscode-plain colored"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="devicon-vscode-plain colored"></i>
       <span>VS Code</span>
     </div>
 
@@ -251,13 +256,13 @@
   <h3 class="skills-subtitle">Outros conhecimentos</h3>
   <div class="skills-container">
 
-    <div class="skill-card animate-section">
-      <i class="fa-solid fa-screwdriver-wrench"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="fa-solid fa-screwdriver-wrench"></i>
       <span>Manutenção de Computadores</span>
     </div>
 
-    <div class="skill-card animate-section">
-      <i class="fa-solid fa-headset"></i>
+    <div class="skill-card">
+      <i aria-hidden="true" class="fa-solid fa-headset"></i>
       <span>Suporte Técnico a usuários</span>
     </div>
 
@@ -275,7 +280,7 @@
     <div class="cards">
 
       <!-- CARD 1 -->
-      <div class="card animate-section">
+      <div class="card">
         <img src="img/projetos/port.webp" alt="Interface do site de portfólio pessoal desenvolvido com HTML, CSS e JavaScript" loading="lazy">
 
         <div class="card-content">
@@ -289,7 +294,7 @@
       </div>
 
       <!-- CARD 2 -->
-      <div class="card animate-section">
+      <div class="card">
         <img src="img/projetos/memory_game.webp" alt="Interface do projeto Rick and Morty Memory Game desenvolvido com HTML, CSS e JavaScript" loading="lazy">
 
         <div class="card-content">
@@ -302,7 +307,7 @@
       </div>
 
       <!-- CARD 3 -->
-      <div class="card animate-section">
+      <div class="card">
         <img src="img/projetos/equilibrivm.webp" alt="Interface digital Equilibrivm Experience inspirada na cantora Anitta" loading="lazy">
 
         <div class="card-content">
@@ -315,7 +320,7 @@
       </div>
 
         <!-- CARD 4 -->
-      <div class="card animate-section">
+      <div class="card">
         <img src="img/projetos/keep.going().webp" alt="Interface do projeto Keep Going que gera frases motivacionais" loading="lazy">
 
         <div class="card-content">
@@ -367,16 +372,16 @@
     
     <div class="footerContainer">
       <div class="socialIcons">
-        <a href="https://www.linkedin.com/in/carolinagarcez"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/CarolinaGarcez"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.instagram.com/mariacarolina.g.a/"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://carolinagarcez.github.io/portfolio/" target="_blank" rel="noopener noreferrer"> <i class="fa-solid fa-laptop-code"></i></a>
+        <a href="https://www.linkedin.com/in/carolinagarcez" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/CarolinaGarcez" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/mariacarolina.g.a/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
+        <a href="https://carolinagarcez.github.io/portfolio/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-solid fa-laptop-code"></i></a>
       </div>
     </div>
 
     <div class="footerBottom">
       <p>Site em constante evolução</p>
-      <img src="img/logo-branco.webp" alt="" loading="lazy">
+      <img src="img/logo-branco.webp" alt="Logotipo Carolina Garcez em versão branca" loading="lazy">
       <p>© 2026 - Desenvolvido por <span class="designer">Carolina Garcez</span></p>
     </div>
 

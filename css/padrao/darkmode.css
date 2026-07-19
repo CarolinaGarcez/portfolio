@@ -35,7 +35,7 @@ body {
   color: var(--text-color);
 }
 
-.fa-sun, .fa-moon {
+.theme-toggle-btn {
   position: fixed;
   right: 40px;
   bottom: 40px;
@@ -43,7 +43,17 @@ body {
   background-color: var(--primary-color);
   font-size: 1.5rem;
   color: #fff;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 4px;
 }

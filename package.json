@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-conversion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "convert.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
