@@ -19,7 +19,7 @@ const cssFiles = [
 ];
 
 const jsFiles = [
-  'js/animaçãohome.js',
+  'js/animacao-home.js',
   'js/seta.js',
   'js/darkmode.js',
   'js/menu.js'
