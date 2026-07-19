@@ -7,20 +7,24 @@
   --text-color: #333;
   --title-color: #222;
   --card-bg: rgba(255, 255, 255, 0.95);
+  --section-bg: #f9f9f9;
+  --skill-bg: rgba(255, 255, 255, 0.05);
+  --btn-light-bg: #ffffff;
 }
-
 
 /* =========================
    DARK MODE (MANUAL)
 ========================= */
 
-.dark-mode {
+body.dark-mode {
   --background-color: #121212;
   --text-color: #ddd;
   --title-color: #fff;
   --card-bg: rgba(30, 30, 30, 0.9);
+  --section-bg: #1e1e1e;
+  --skill-bg: rgba(255, 255, 255, 0.1);
+  --btn-light-bg: #333;
 }
-
 
 /* =========================
    APLICANDO AS CORES
@@ -31,18 +35,7 @@ body {
   color: var(--text-color);
 }
 
-.about-container {
-  background: var(--card-bg);
-}
-
-.about h2 {
-  color: var(--title-color);
-}
-
-.about p {
-  color: var(--text-color);
-}
-.fa-sun {
+.fa-sun, .fa-moon {
   position: fixed;
   right: 40px;
   bottom: 40px;
@@ -52,4 +45,5 @@ body {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-}
+  z-index: 1000;
+}

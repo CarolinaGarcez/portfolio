@@ -35,3 +35,32 @@ h1, h2, h3 {
 }
 
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+a, button, .btn-projects, .btn-about, .btn-cv, .card {
+  transition: all 0.3s ease;
+}
+
+/* Animação suave ao scroll */
+.animate-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section.show-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respeita preferência do usuário de reduzir movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

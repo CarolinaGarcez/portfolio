@@ -4,7 +4,7 @@
   
   background:
     linear-gradient(135deg, rgba(95,127,99,0.8), rgba(58,90,64,0.8)),
-    url('../../../img/bg/verde.png');
+    url('../../../img/bg/verde.webp');
   background-size: cover; /* cobre todo o container  */
   background-position: center; /* centraliza a imagem  */
 
@@ -32,7 +32,7 @@
   text-align: center; 
   position: relative; 
   z-index: 1;  /* garante que fique acima do fundo */
-  background: rgba(255, 255, 255, 0.95); /* fundo branco levemente transparente */
+  background: var(--card-bg); /* fundo via variavel */
   backdrop-filter: blur(6px);  /* efeito de vidro (glass) */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* sombra pra dar profundidade  */
 }
@@ -44,25 +44,7 @@
   font-weight: 600;
   color: var(--primary-color);
 }
-/* DARK MODE*/
 
-@media (prefers-color-scheme: dark) {
-
-  .about-container {
-    background: rgba(30, 30, 30, 0.9); /* fundo escuro com transparência */
-    
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);/* sombra mais forte pra combinar com dark */
-  }
-
-  .about p {
-    color: #ddd; /* texto mais claro pra não cansar o olho */
-  }
-
-  .about h2 {
-    color: #fff;
-    
-  }
-}
 
 .btn-about {
   display: inline-block; 
@@ -87,6 +69,6 @@
 .about p {
   margin-bottom: 15px; 
   line-height: 1.6; 
-  color: #333; 
+  color: var(--text-color);  
 
 }

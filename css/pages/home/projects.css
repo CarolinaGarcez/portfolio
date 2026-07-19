@@ -3,7 +3,7 @@
   padding: 10px 0;
     background:
     linear-gradient(135deg, rgba(95,127,99,0.8), rgba(58,90,64,0.8)),
-    url('../../../img/bg/verde.png');
+    url('../../../img/bg/verde.webp');
   background-size: cover; /* cobre todo o container  */
   background-position: center; /* centraliza a imagem  */
   border-radius: 16px; /* cantos arredondados  */
@@ -32,7 +32,7 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   border-radius: 16px;
   overflow: hidden;
   text-align: left;
@@ -56,10 +56,12 @@
 
 .card h3 {
   margin-bottom: 10px;
+  color: var(--title-color);
 }
 .card p {
   font-size: 0.95rem;
   margin-bottom: 15px;
+  color: var(--text-color);
 }
 .card a {
   color: var(--primary-color);
@@ -71,7 +73,7 @@
   display: inline-block;
   margin-top: 40px;
   padding: 12px 24px;
-  background-color: #fff;
+  background-color: var(--btn-light-bg);
   color: var(--primary-color);
   border-radius: 8px;
   text-decoration: none;

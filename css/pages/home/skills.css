@@ -8,12 +8,14 @@
 #skills h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: var(--title-color);
 }
 
 .skills-subtitle {
   margin: 30px 0 15px;
   font-size: 1.2rem;
   opacity: 0.8;
+  color: var(--text-color);
 }
 
 /* CONTAINER */
@@ -26,7 +28,7 @@
 
 /* CARD */
 .skill-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--skill-bg);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 20px;
@@ -45,6 +47,7 @@
 .skill-card span {
   display: block;
   font-size: 0.9rem;
+  color: var(--text-color);
 }
 
 /* HOVER */

@@ -1,0 +1,7 @@
+cmd.exe /c "npx -y sharp-cli -i img/perfila.png -o img/perfila.webp"
+cmd.exe /c "npx -y sharp-cli -i img/projetos/port.png -o img/projetos/port.webp"
+cmd.exe /c "npx -y sharp-cli -i img/projetos/memory_game.png -o img/projetos/memory_game.webp"
+cmd.exe /c "npx -y sharp-cli -i img/projetos/equilibrivm.png -o img/projetos/equilibrivm.webp"
+cmd.exe /c "npx -y sharp-cli -i "img/projetos/keep.going().png" -o "img/projetos/keep.going().webp""
+cmd.exe /c "npx -y sharp-cli -i img/bg/verde.png -o img/bg/verde.webp"
+cmd.exe /c "npx -y sharp-cli -i img/logo-branco.png -o img/logo-branco.webp"
