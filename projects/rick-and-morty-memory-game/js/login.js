@@ -48,8 +48,7 @@ const handleSubmit = (event) => {
   /* espera animação */
   setTimeout(() => {
 
-    window.location =
-      'pages/fase1.html';
+    window.location.href = './pages/fase1.html';
 
   }, 2200);
 
