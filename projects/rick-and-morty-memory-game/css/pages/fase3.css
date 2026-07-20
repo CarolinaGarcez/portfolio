@@ -73,6 +73,7 @@ body::before {
 
 .card {
   max-width: 110px;
+  min-height: 140px;
 }
 
 .final-transition {

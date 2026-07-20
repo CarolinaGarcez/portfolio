@@ -6,6 +6,7 @@
 .card {
   aspect-ratio: 3/4;
   width: 100%;
+  min-height: 140px;
   border-radius: 10px;
   position: relative;
   transform-style: preserve-3d;
@@ -31,8 +32,10 @@
 .face {
   width: 100%;
   height: 100%;
+  min-height: 100%;
   position: absolute;
   inset: 0;
+  background-color: #041410;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,7 +63,8 @@
 
 /* Lado Verso (Inicial - Capa) */
 .back {
-  background-image: url('../../img/cards/card-bk.png');
+  background-color: #041410;
+  background-image: url('../img/cards/card-bk.png');
   backface-visibility: hidden;
 }
 

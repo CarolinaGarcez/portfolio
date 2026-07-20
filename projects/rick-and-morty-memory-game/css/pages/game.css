@@ -63,6 +63,8 @@ header {
   margin: 10px auto;
   padding: 16px;
   justify-items: center;
+  align-items: stretch;
+  min-height: 200px;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(0, 255, 204, 0.25);
