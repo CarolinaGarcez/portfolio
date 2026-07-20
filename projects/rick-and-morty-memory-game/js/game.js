@@ -128,7 +128,7 @@ const shuffleArray = (array) => {
    ELEMENTOS DO DOM & ESTADO DO JOGO
 ========================================================= */
 
-const elements = {
+const getElements = () => ({
   grid: document.querySelector('.grid'),
   spanPlayer: document.querySelector('.player'),
   timer: document.querySelector('.timer'),
@@ -140,7 +140,9 @@ const elements = {
   winBoxTitle: document.querySelector('.win-box h2'),
   winText: document.querySelector('.win-text'),
   nextPhaseBtn: document.querySelector('.next-phase')
-};
+});
+
+let elements = getElements();
 
 const gameState = {
   firstCard: null,
@@ -411,6 +413,7 @@ const checkGameCompletion = () => {
 ========================================================= */
 
 const loadGame = () => {
+  elements = getElements();
   if (!window.gameConfig?.characters || !elements.grid) return;
 
   preloadCardImages();
@@ -443,29 +446,32 @@ const loadGame = () => {
    OUVINTES DE EVENTOS (EVENT DELEGATION & BUTTONS)
 ========================================================= */
 
-if (elements.grid) {
-  elements.grid.addEventListener('click', (event) => {
-    const card = event.target.closest('.card');
-    if (card) {
-      revealCard(card);
-    }
-  });
-}
-
-if (elements.resetButton) {
-  elements.resetButton.addEventListener('click', () => {
-    window.location.reload();
-  });
-}
-
-if (elements.nextPhaseBtn) {
-  elements.nextPhaseBtn.addEventListener('click', triggerPortalWarp);
-}
-
 window.onload = () => {
+  elements = getElements();
+
   if (elements.spanPlayer) {
     elements.spanPlayer.textContent = Storage.get('player', 'Jogador');
   }
+
+  if (elements.grid) {
+    elements.grid.addEventListener('click', (event) => {
+      const card = event.target.closest('.card');
+      if (card) {
+        revealCard(card);
+      }
+    });
+  }
+
+  if (elements.resetButton) {
+    elements.resetButton.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }
+
+  if (elements.nextPhaseBtn) {
+    elements.nextPhaseBtn.addEventListener('click', triggerPortalWarp);
+  }
+
   startTimer();
   loadGame();
 };

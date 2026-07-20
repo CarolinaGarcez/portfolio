@@ -14,7 +14,6 @@
   will-change: transform;
   cursor: pointer;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), var(--glow-cyan-sm);
-  contain: layout paint;
 }
 
 /* Microinteração ao Passar o Cursor (Hover & Elevamento 3D) */
@@ -28,7 +27,7 @@
   transform: scale(0.96);
 }
 
-/* Faces Padronizadas (Frente e Verso) */
+/* Faces Padronizadas (Frente e Verso com Preservação do Contexto 3D) */
 .face {
   width: 100%;
   height: 100%;
@@ -42,7 +41,6 @@
   transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   backface-visibility: hidden;
   will-change: transform;
-  overflow: hidden;
 }
 
 /* Camada de Iluminação Especular (Reflexo Glass/Luz 3D) */
