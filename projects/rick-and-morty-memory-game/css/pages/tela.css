@@ -19,16 +19,29 @@ body {
 
   font-family: sans-serif;
 
+  position: relative;
+
+  background-color: #000;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background:
     linear-gradient(
       rgba(0,0,0,.75),
       rgba(0,0,0,.95)
     ),
-    url('../../img/cards/final/psic.png');
+    url('../../img/cards/fase3/psic.png');
 
   background-size: cover;
 
   background-position: center;
+
+  will-change: filter;
+  transform: translateZ(0);
 
   animation:
     psychedelic 12s linear infinite;

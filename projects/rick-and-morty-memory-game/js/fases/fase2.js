@@ -4,7 +4,7 @@
 
 const gameConfig = {
 
-    finalPhase: true,
+    finalPhase: false,
 
   /* próxima fase */
   nextPage: '../pages/fase3.html',

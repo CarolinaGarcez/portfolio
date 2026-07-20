@@ -28,12 +28,8 @@ const nextPhase =
 ========================================================= */
 
 const createElement = (tag, className) => {
-
-  const element =
-    document.createElement(tag);
-
+  const element = document.createElement(tag);
   element.className = className;
-
   return element;
 };
 
@@ -42,17 +38,23 @@ const createElement = (tag, className) => {
    CONTROLE DO JOGO
 ========================================================= */
 
-/* primeira carta */
 let firstCard = null;
-
-/* segunda carta */
 let secondCard = null;
-
-/* trava cliques */
 let lockBoard = false;
-
-/* timer */
 let loop;
+
+
+/* =========================================================
+   PRÉ-CARREGAMENTO DE IMAGENS (PRELOAD)
+========================================================= */
+
+const preloadImages = () => {
+  if (!gameConfig || !gameConfig.characters) return;
+  gameConfig.characters.forEach((character) => {
+    const img = new Image();
+    img.src = `${gameConfig.cardPath}${character}.png`;
+  });
+};
 
 
 /* =========================================================
@@ -60,7 +62,6 @@ let loop;
 ========================================================= */
 
 const checkEndGame = () => {
-
   const disabledCards =
     document.querySelectorAll('.disabled-card');
 
@@ -71,10 +72,17 @@ const checkEndGame = () => {
 
     clearInterval(loop);
 
+    const currentPhaseTime = parseInt(timer.innerHTML) || 0;
+    const prevTotal = parseInt(localStorage.getItem('totalTime') || '0');
+    const newTotal = prevTotal + currentPhaseTime;
+    localStorage.setItem('totalTime', newTotal.toString());
+
     const winTitle =
       document.querySelector('.win-box h2');
 
     if (gameConfig.finalPhase) {
+
+      localStorage.setItem('finalTime', newTotal.toString());
 
       winTitle.innerHTML =
         '⚠️ CITADEL COLLAPSE ⚠️';
@@ -105,12 +113,12 @@ const checkEndGame = () => {
   }
 };
 
+
 /* =========================================================
    COMPARA CARTAS
 ========================================================= */
 
 const checkCards = () => {
-
   const firstCharacter =
     firstCard.getAttribute('data-character');
 
@@ -118,12 +126,8 @@ const checkCards = () => {
     secondCard.getAttribute('data-character');
 
 
-  /* =========================================
-     CARTAS IGUAIS
-  ========================================= */
-
+  /* CARTAS IGUAIS */
   if (firstCharacter === secondCharacter) {
-
     firstCard.firstChild
       .classList.add('disabled-card');
 
@@ -132,28 +136,22 @@ const checkCards = () => {
 
     firstCard = null;
     secondCard = null;
-
     lockBoard = false;
 
     checkEndGame();
 
   } else {
-
-    /* =========================================
-       CARTAS DIFERENTES
-    ========================================= */
-
+    /* CARTAS DIFERENTES */
     setTimeout(() => {
-
-      firstCard.classList
-        .remove('reveal-card');
-
-      secondCard.classList
-        .remove('reveal-card');
+      if (firstCard) {
+        firstCard.classList.remove('reveal-card');
+      }
+      if (secondCard) {
+        secondCard.classList.remove('reveal-card');
+      }
 
       firstCard = null;
       secondCard = null;
-
       lockBoard = false;
 
     }, 500);
@@ -165,47 +163,22 @@ const checkCards = () => {
    VIRAR CARTA
 ========================================================= */
 
-const revealCard = ({ target }) => {
-
-  /* trava animação */
+const revealCard = (card) => {
   if (lockBoard) return;
-
-  const card =
-    target.closest('.card');
-
   if (!card) return;
 
-  /* impede clicar na mesma */
   if (
     card.classList.contains('reveal-card')
   ) return;
 
-
-  /* =========================================
-     VIRA CARTA
-  ========================================= */
-
   card.classList.add('reveal-card');
 
-
-  /* =========================================
-     PRIMEIRA CARTA
-  ========================================= */
-
   if (!firstCard) {
-
     firstCard = card;
-
     return;
   }
 
-
-  /* =========================================
-     SEGUNDA CARTA
-  ========================================= */
-
   secondCard = card;
-
   lockBoard = true;
 
   checkCards();
@@ -217,28 +190,12 @@ const revealCard = ({ target }) => {
 ========================================================= */
 
 const createCard = (character) => {
-
-  const card =
-    createElement('div', 'card');
-
-  const front =
-    createElement('div', 'face front');
-
-  const back =
-    createElement('div', 'face back');
-
-
-  /* =========================================
-     IMAGEM DA CARTA
-  ========================================= */
+  const card = createElement('div', 'card');
+  const front = createElement('div', 'face front');
+  const back = createElement('div', 'face back');
 
   front.style.backgroundImage =
     `url('${gameConfig.cardPath}${character}.png')`;
-
-
-  /* =========================================
-     MONTA CARTA
-  ========================================= */
 
   card.appendChild(front);
   card.appendChild(back);
@@ -246,11 +203,6 @@ const createCard = (character) => {
   card.setAttribute(
     'data-character',
     character
-  );
-
-  card.addEventListener(
-    'click',
-    revealCard
   );
 
   return card;
@@ -262,38 +214,40 @@ const createCard = (character) => {
 ========================================================= */
 
 const loadGame = () => {
+  preloadImages();
 
   const duplicateCharacters = [
-
     ...gameConfig.characters,
-
     ...gameConfig.characters
-
   ];
 
+  /* Fisher-Yates Shuffle para O(n) e aleatoriedade uniforme */
+  for (let i = duplicateCharacters.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [duplicateCharacters[i], duplicateCharacters[j]] = [duplicateCharacters[j], duplicateCharacters[i]];
+  }
 
-  /* =========================================
-     EMBARALHA
-  ========================================= */
+  /* Uso de DocumentFragment para 1 único reflow/repaint ao montar a grade */
+  const fragment = document.createDocumentFragment();
 
-  const shuffledArray =
-    duplicateCharacters.sort(
-      () => Math.random() - 0.5
-    );
-
-
-  /* =========================================
-     CRIA CARTAS
-  ========================================= */
-
-  shuffledArray.forEach((character) => {
-
-    const card =
-      createCard(character);
-
-    grid.appendChild(card);
+  duplicateCharacters.forEach((character) => {
+    const card = createCard(character);
+    fragment.appendChild(card);
   });
+
+  grid.appendChild(fragment);
 };
+
+
+/* Delegação de eventos no container pai .grid */
+if (grid) {
+  grid.addEventListener('click', (event) => {
+    const card = event.target.closest('.card');
+    if (card) {
+      revealCard(card);
+    }
+  });
+}
 
 
 /* =========================================================
@@ -301,15 +255,10 @@ const loadGame = () => {
 ========================================================= */
 
 const startTimer = () => {
-
   let time = 0;
-
   loop = setInterval(() => {
-
     time++;
-
     timer.innerHTML = time;
-
   }, 1000);
 };
 
@@ -318,38 +267,32 @@ const startTimer = () => {
    RESET
 ========================================================= */
 
-resetButton.addEventListener('click', () => {
-
-  window.location.reload();
-
-});
+if (resetButton) {
+  resetButton.addEventListener('click', () => {
+    window.location.reload();
+  });
+}
 
 
 /* =========================================================
    PRÓXIMA FASE
 ========================================================= */
 
-nextPhase.addEventListener('click', () => {
+if (nextPhase) {
+  nextPhase.addEventListener('click', () => {
+    if (gameConfig.finalPhase) {
+      document.body.classList.add('final-transition');
 
-  if (gameConfig.finalPhase) {
+      setTimeout(() => {
+        window.location.href = gameConfig.nextPage;
+      }, 3000);
 
-    document.body.classList
-      .add('final-transition');
+      return;
+    }
 
-    setTimeout(() => {
-
-      window.location.href =
-        gameConfig.nextPage;
-
-    }, 3000);
-
-    return;
-  }
-
-  window.location.href =
-    gameConfig.nextPage;
-
-});
+    window.location.href = gameConfig.nextPage;
+  });
+}
 
 
 /* =========================================================
@@ -357,19 +300,9 @@ nextPhase.addEventListener('click', () => {
 ========================================================= */
 
 window.onload = () => {
-
-  /* nome jogador */
   spanPlayer.innerHTML =
+    localStorage.getItem('player') || 'Jogador';
 
-    localStorage.getItem('player')
-
-    || 'Jogador';
-
-
-  /* inicia timer */
   startTimer();
-
-
-  /* carrega cartas */
   loadGame();
 };

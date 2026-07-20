@@ -41,6 +41,8 @@ const handleSubmit = (event) => {
     'player',
     input.value
   );
+  localStorage.removeItem('totalTime');
+  localStorage.removeItem('finalTime');
 
   /* mostra loading */
   portalLoading.classList.remove('hidden');

@@ -1,55 +1,39 @@
 body {
-  margin: 0; /* tiro a margem padrão do navegador pra não dar espaçamento estranho */
-  display: flex;/* uso flex em coluna porque meu layout é vertical  */
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
-  overflow-x: hidden;
-  
-   background: 
+  background: 
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
     url('../../img/cards/fase3/psic.png');
-  /* coloquei um fundo com imagem + um degradê escuro por cima pra dar contraste */
   background-size: cover; 
   background-position: center; 
-  /* centraliza a imagem no meio da tela */
-
-  /* fonte simples por enquanto */
-  font-family: sans-serif;
-}
-.grid{
-  grid-template-columns: repeat(6,1fr);
-  max-width:1100px;
 }
 
-.card{
-  max-width:110px;
+.grid {
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1100px;
 }
+
+.card {
+  max-width: 110px;
+}
+
 .final-transition {
-
   animation:
     shake .15s infinite,
     glitchBg .3s infinite;
 }
 
 @keyframes shake {
-
   0%   { transform: translate(2px,2px); }
   25%  { transform: translate(-2px,1px); }
   50%  { transform: translate(3px,-1px); }
   75%  { transform: translate(-1px,-2px); }
   100% { transform: translate(1px,2px); }
-
 }
 
 @keyframes glitchBg {
-
   from {
     filter: hue-rotate(0deg);
   }
-
   to {
     filter: hue-rotate(360deg);
   }
-
 }

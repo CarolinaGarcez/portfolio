@@ -13,19 +13,25 @@ body {
 
   position: relative;
 
+  background-color: #000;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background:
     linear-gradient(
       rgba(0,0,0,0.6),
       rgba(0,0,0,0.85)
     ),
     url('../../img/index/capa-inicial.png');
-
   background-size: cover;
-
   background-position: center;
-
-  animation:
-    psychedelic 12s linear infinite;
+  will-change: filter;
+  transform: translateZ(0);
+  animation: psychedelic 12s linear infinite;
 }
 
 .login-form {
