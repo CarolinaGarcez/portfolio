@@ -47,17 +47,19 @@ const validateInput = (event) => {
  * Processa a submissão do formulário de entrada
  */
 const handleSubmit = (event) => {
-  event.preventDefault();
+  if (event) event.preventDefault();
 
   if (!elements.input) return;
 
   const playerName = elements.input.value.trim();
   if (playerName.length < 3) return;
 
-  // Armazena jogador e reseta sessões de tempo anteriores
+  // Armazena jogador e reseta sessões de estatísticas anteriores
   Storage.set('player', playerName);
   Storage.remove('totalTime');
   Storage.remove('finalTime');
+  Storage.remove('totalMoves');
+  Storage.remove('maxStreak');
 
   // Exibe a tela de carregamento do portal
   if (elements.portalLoading) {
@@ -71,7 +73,14 @@ const handleSubmit = (event) => {
 };
 
 // Inicialização dos ouvintes de eventos
-if (elements.input && elements.form) {
+if (elements.input) {
   elements.input.addEventListener('input', validateInput);
+}
+
+if (elements.button) {
+  elements.button.addEventListener('click', handleSubmit);
+}
+
+if (elements.form) {
   elements.form.addEventListener('submit', handleSubmit);
 }

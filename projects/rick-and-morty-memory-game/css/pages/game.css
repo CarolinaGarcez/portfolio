@@ -54,15 +54,21 @@ header {
   margin: 0;
 }
 
-/* Grade de Cartas */
+/* Grade de Cartas com Perspectiva 3D & Painel Glassmorphic */
 .grid {
   display: grid;
   gap: 12px;
   width: 90%;
   max-width: 750px;
   margin: 10px auto;
-  padding: 10px;
+  padding: 16px;
   justify-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 204, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), var(--glow-cyan-sm);
+  perspective: 1000px;
 }
 
 .buttons {
@@ -74,7 +80,7 @@ header {
 @media (max-width: 480px) {
   .grid {
     gap: 6px;
-    padding: 5px;
+    padding: 8px;
     width: 98%;
   }
   header {

@@ -1,14 +1,51 @@
+/* =========================================================
+   FASE 1: DIMENSION R-137 (TEMA VERDE PORTAL CLÁSSICO)
+========================================================= */
+
+:root {
+  --phase-accent: #7cff00;
+  --phase-glow: 0 0 20px rgba(124, 255, 0, 0.4);
+}
+
 body {
+  position: relative;
+  background-color: var(--color-bg-dark);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    radial-gradient(ellipse at center, rgba(0, 25, 10, 0.65) 0%, rgba(0, 0, 0, 0.92) 100%),
     url('../../img/cards/fase1/bg-ricks.png');
   background-size: cover; 
   background-position: center; 
+  filter: brightness(0.88) saturate(0.9) contrast(1.05);
 }
 
+/* Identidade Visual Fase 1: Verde Clássico */
 .grid {
   grid-template-columns: repeat(4, 1fr);
   max-width: 700px;
+  border-color: rgba(124, 255, 0, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 255, 0, 0.3);
+}
+
+.card .face {
+  border-color: #7cff00;
+  box-shadow: 0 0 8px rgba(124, 255, 0, 0.4);
+}
+
+.titulo h1 {
+  color: #7cff00;
+  text-shadow: 0 0 15px rgba(124, 255, 0, 0.6);
+}
+
+.hud-bar {
+  border-color: #7cff00;
+  box-shadow: 0 0 12px rgba(124, 255, 0, 0.25);
 }
 
 .card {

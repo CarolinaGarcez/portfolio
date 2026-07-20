@@ -24,11 +24,20 @@
 <body>
 
   <main>
-    <header>
-      <span class="player"></span>
-      <span>⏱ Tempo: <span class="timer">00</span></span>
+    <header class="hud-bar">
+      <div class="hud-group">
+        <div class="hud-item hud-player"><i class="fa-solid fa-user"></i> <span class="player">Jogador</span></div>
+        <div class="hud-item"><i class="fa-solid fa-compass"></i> <span class="phase-name">Fase 3</span></div>
+      </div>
+
+      <div class="hud-group">
+        <div class="hud-item"><i class="fa-solid fa-stopwatch"></i> <span class="timer">00</span>s</div>
+        <div class="hud-item"><i class="fa-solid fa-hand-pointer"></i> <span class="moves">0</span> jogadas</div>
+        <div class="hud-item"><i class="fa-solid fa-clone"></i> <span class="matched-pairs">0</span>/<span class="total-pairs">9</span> pares</div>
+      </div>
+
       <div class="buttons">
-        <a href="../index.html" class="back-button">⬅ Voltar</a>
+        <a href="../index.html" class="back-button" aria-label="Voltar">⬅ Voltar</a>
         <button class="reset">🔄 Reiniciar</button>
       </div>
     </header>

@@ -1,14 +1,70 @@
-body {
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url('../../img/cards/fase2/bg-fase2.png') no-repeat;
-  background-size: cover; 
-  background-position: center; 
+/* =========================================================
+   FASE 2: MORTYVERSE CRISIS (TEMA AZUL CÓSMICO ELÉTRICO)
+========================================================= */
+
+:root {
+  --phase-accent: #00d2ff;
+  --phase-glow: 0 0 20px rgba(0, 210, 255, 0.4);
 }
 
+body {
+  position: relative;
+  background-color: var(--color-bg-dark);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(ellipse at center, rgba(0, 20, 40, 0.7) 0%, rgba(0, 5, 15, 0.94) 100%),
+    url('../../img/cards/fase2/bg-fase2.png');
+  background-size: cover; 
+  background-position: center; 
+  filter: brightness(0.85) saturate(1.1) contrast(1.1);
+}
+
+/* Identidade Visual Fase 2: Azul Elétrico */
 .grid {
   grid-template-columns: repeat(4, 1fr);
   max-width: 850px;
+  border-color: rgba(0, 210, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 210, 255, 0.35);
+}
+
+.card .face {
+  border-color: #00d2ff;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.titulo h1 {
+  color: #00d2ff;
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.7);
+}
+
+.subtitle {
+  color: #70e0ff;
+}
+
+.hud-bar {
+  border-color: #00d2ff;
+  box-shadow: 0 0 14px rgba(0, 210, 255, 0.3);
+}
+
+.hud-item i {
+  color: #00d2ff;
+}
+
+.reset, .back-button {
+  color: #00d2ff;
+  border-color: #00d2ff;
+}
+
+.reset:hover, .back-button:hover {
+  background: #00d2ff;
+  color: #000;
+  box-shadow: 0 0 15px #00d2ff;
 }
 
 .card {

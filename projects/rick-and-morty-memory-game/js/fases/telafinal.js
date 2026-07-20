@@ -1,9 +1,8 @@
 /**
  * End Screen Controller - Rick and Morty Memory Game
- * Exibe o tempo final acumulado e gerencia o reinício do jogo.
+ * Exibe as estatísticas da conquista final do jogador e gerencia botões.
  */
 
-// Helper seguro para localStorage com tratamento defensivo
 const Storage = {
   get(key, defaultValue = '') {
     try {
@@ -22,21 +21,30 @@ const Storage = {
   }
 };
 
-// Mapeamento dos elementos do DOM
 const elements = {
   finalScreen: document.querySelector('.final-screen'),
-  finalTime: document.querySelector('.final-time'),
+  totalTime: document.querySelector('.final-total-time'),
+  totalMoves: document.querySelector('.final-total-moves'),
+  maxStreak: document.querySelector('.final-max-streak'),
   playAgainBtn: document.querySelector('.play-again')
 };
 
 /**
- * Atualiza o elemento de tempo final e exibe a tela de vitória
+ * Atualiza os marcadores da Tela de Conquista com dados reais salvos
  */
-const renderFinalScreen = () => {
-  const finalScore = Storage.get('finalTime') || Storage.get('totalTime') || '0';
+const renderAchievementScreen = () => {
+  const finalScoreTime = Storage.get('finalTime') || Storage.get('totalTime') || '0';
+  const totalMoves = Storage.get('totalMoves') || '0';
+  const maxStreak = Storage.get('maxStreak') || '0';
 
-  if (elements.finalTime) {
-    elements.finalTime.textContent = `${finalScore}s`;
+  if (elements.totalTime) {
+    elements.totalTime.textContent = `${finalScoreTime}s`;
+  }
+  if (elements.totalMoves) {
+    elements.totalMoves.textContent = `${totalMoves} jogadas`;
+  }
+  if (elements.maxStreak) {
+    elements.maxStreak.textContent = `${maxStreak} acertos`;
   }
 
   if (elements.finalScreen) {
@@ -51,12 +59,13 @@ const handlePlayAgain = () => {
   Storage.remove('player');
   Storage.remove('totalTime');
   Storage.remove('finalTime');
+  Storage.remove('totalMoves');
+  Storage.remove('maxStreak');
 
   window.location.href = '../index.html';
 };
 
-// Registra ouvintes quando o DOM estiver pronto
-window.addEventListener('DOMContentLoaded', renderFinalScreen);
+window.addEventListener('DOMContentLoaded', renderAchievementScreen);
 
 if (elements.playAgainBtn) {
   elements.playAgainBtn.addEventListener('click', handlePlayAgain);

@@ -1,0 +1,91 @@
+/* =========================================================
+   COMPONENTE: HUD SUPERIOR DE VIDEOGAME (GAMING BAR)
+========================================================= */
+
+.hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 95%;
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 8px 16px;
+  background: var(--color-bg-box);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-neon-cyan);
+  border-radius: 12px;
+  box-shadow: var(--glow-cyan-sm);
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+/* Agrupadores de Informações */
+.hud-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Pílula de Informação do HUD */
+.hud-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(0, 255, 204, 0.08);
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  border-radius: 6px;
+  color: var(--color-text-white);
+  white-space: nowrap;
+}
+
+.hud-item i {
+  color: var(--color-neon-cyan);
+  font-size: 0.9em;
+}
+
+.hud-item strong,
+.hud-item span {
+  color: var(--color-neon-green);
+}
+
+/* Nome do Jogador no HUD */
+.hud-player {
+  border-color: rgba(178, 223, 40, 0.4);
+  background: rgba(178, 223, 40, 0.1);
+}
+
+.hud-player i {
+  color: var(--color-neon-green);
+}
+
+.hud-player .player {
+  color: var(--color-text-white);
+  font-weight: bold;
+}
+
+/* Adaptatividade Responsiva em Telas Menores */
+@media (max-width: 680px) {
+  .hud-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .hud-group {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .hud-item {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}

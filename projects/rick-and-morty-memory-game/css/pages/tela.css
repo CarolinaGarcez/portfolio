@@ -1,5 +1,5 @@
 /* =========================================================
-   PÁGINA FINAL DE VITÓRIA (TELA FINAL)
+   PÁGINA FINAL DE VITÓRIA & CONQUISTA (ACHIEVEMENT SCREEN)
 ========================================================= */
 
 body {
@@ -21,7 +21,7 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(
+    radial-gradient(
       rgba(0,0,0,.75),
       rgba(0,0,0,.95)
     ),
@@ -64,75 +64,107 @@ body::before {
 .final-box {
   position: relative;
   width: 90%;
-  max-width: 700px;
-  padding: 50px 40px;
+  max-width: 750px;
+  padding: 45px 35px;
   border-radius: 30px;
   background: var(--color-bg-card-dark);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border: 2px solid var(--color-neon-cyan);
   text-align: center;
-  box-shadow: 0 0 40px rgba(0, 255, 204, 0.35);
+  box-shadow: 0 0 45px rgba(0, 255, 204, 0.4);
   z-index: 2;
-  animation: popup 0.5s ease;
+  animation: popupAchievement 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Header da Conquista */
+.victory-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.victory-trophy {
+  font-size: 3.5rem;
+  margin-bottom: 5px;
+  animation: trophyBounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px var(--color-neon-green));
 }
 
 .final-logo {
-  width: 220px;
-  margin-bottom: 20px;
+  width: 200px;
+  margin-bottom: 15px;
   filter: drop-shadow(0 0 15px var(--color-neon-cyan));
 }
 
 .final-box h1 {
   color: var(--color-neon-lime);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin: 0;
   text-shadow: var(--glow-cyan-md);
+  font-family: var(--font-family-retro);
 }
 
 .final-box h1 span {
   display: block;
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 3px;
   color: var(--color-neon-cyan);
 }
 
 .final-message {
   color: var(--color-text-white);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin: 25px 0;
+  margin: 20px 0 30px 0;
 }
 
+/* Grade de Cards das 5 Estatísticas */
 .final-stats {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
   margin-bottom: 30px;
 }
 
 .stat-card {
-  min-width: 180px;
-  padding: 15px 20px;
+  padding: 14px 12px;
   border-radius: 15px;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
   border: 1px solid var(--color-neon-cyan);
   color: var(--color-text-white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+  animation: cardPopIn 0.5s ease backwards;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-neon-green);
+  box-shadow: var(--glow-green-md);
 }
 
 .stat-card span {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--color-neon-cyan);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
 }
 
 .stat-card strong {
   color: var(--color-neon-lime);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
+/* Entradas Escalonadas dos Cards */
+.stat-stagger-1 { animation-delay: 0.1s; }
+.stat-stagger-2 { animation-delay: 0.2s; }
+.stat-stagger-3 { animation-delay: 0.3s; }
+.stat-stagger-4 { animation-delay: 0.4s; }
+.stat-stagger-5 { animation-delay: 0.5s; }
+
+/* Botões de Ação Final */
 .final-buttons {
   display: flex;
   justify-content: center;
@@ -140,12 +172,34 @@ body::before {
   flex-wrap: wrap;
 }
 
+.back-portfolio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(178, 223, 40, 0.15);
+  border: 1px solid var(--color-neon-green);
+  color: var(--color-neon-green);
+  text-decoration: none;
+  font-family: var(--font-family-retro);
+  font-size: 0.85rem;
+  transition: var(--transition-normal);
+}
+
+.back-portfolio:hover {
+  background: var(--color-neon-green);
+  color: #000000;
+  box-shadow: var(--glow-green-md);
+  transform: scale(1.05);
+}
+
 .final-quote {
-  margin-top: 20px;
+  margin-top: 25px;
   color: var(--color-neon-green);
   font-style: italic;
   opacity: 0.8;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 footer {
@@ -154,27 +208,14 @@ footer {
 }
 
 /* ANIMAÇÕES */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes trophyBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.1); }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-}
-
-@keyframes popup {
+@keyframes popupAchievement {
   from {
-    transform: scale(0.7);
+    transform: scale(0.6);
     opacity: 0;
   }
   to {
@@ -183,31 +224,45 @@ footer {
   }
 }
 
+@keyframes cardPopIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
 @keyframes psychedelic {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .final-box {
-    padding: 35px 20px;
+    padding: 30px 18px;
   }
   .final-logo {
-    width: 170px;
+    width: 160px;
   }
   .final-box h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-  .stat-card {
-    min-width: 140px;
-  }
-  .portal-bg {
-    width: 500px;
-    height: 500px;
+  .final-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }

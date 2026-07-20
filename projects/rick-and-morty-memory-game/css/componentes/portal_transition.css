@@ -1,0 +1,134 @@
+/* =========================================================
+   COMPONENTE: TRANSIÇÃO DE PORTAL INTERDIMENSIONAL
+========================================================= */
+
+/* Overlay Cósmico Principal */
+.portal-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 20, 15, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+/* Container de Conteúdo */
+.portal-transition-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  gap: 15px;
+  max-width: 600px;
+  padding: 30px;
+}
+
+/* Badge de Fase */
+.dimension-badge {
+  background: rgba(0, 255, 204, 0.15);
+  border: 1px solid var(--color-neon-cyan);
+  color: var(--color-neon-cyan);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: var(--glow-cyan-sm);
+}
+
+/* Nome da Dimensão */
+.dimension-title {
+  color: var(--color-neon-lime);
+  font-size: 1.8rem;
+  text-shadow: var(--glow-cyan-md);
+  margin: 5px 0;
+  letter-spacing: 2px;
+}
+
+/* Subtítulo / Status de Salto */
+.dimension-subtitle {
+  color: var(--color-text-white);
+  font-size: 0.85rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* Container do Portal Animado */
+.portal-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Anel Externo do Portal */
+.portal-ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, #7cff00 0%, #00ffcc 40%, transparent 75%);
+  filter: blur(15px);
+  opacity: 0.6;
+  animation: spinPortal 6s linear infinite, pulsePortal 2s ease-in-out infinite;
+}
+
+/* Anel Interno do Portal (Vórtice) */
+.portal-ring-inner {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 4px dashed var(--color-neon-cyan);
+  animation: spinPortal 3s linear infinite reverse;
+  box-shadow: 0 0 25px var(--color-neon-lime);
+}
+
+/* Núcleo do Portal */
+.portal-core {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #7cff00 35%, #00ffcc 70%, #002b22 100%);
+  box-shadow: 0 0 50px var(--color-neon-cyan), 0 0 80px var(--color-neon-lime);
+  animation: pulseCore 1.5s ease-in-out infinite;
+}
+
+/* Contagem Regressiva Numerica (3, 2, 1) */
+.portal-countdown {
+  font-size: 3.5rem;
+  color: var(--color-neon-cyan);
+  text-shadow: var(--glow-cyan-lg), 0 0 30px var(--color-neon-lime);
+  margin-top: 10px;
+  font-family: var(--font-family-retro);
+  animation: countdownPop 0.8s ease-in-out infinite;
+}
+
+/* Animações CSS */
+@keyframes spinPortal {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulsePortal {
+  0%, 100% { scale: 1; opacity: 0.6; }
+  50% { scale: 1.12; opacity: 0.9; }
+}
+
+@keyframes pulseCore {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.08; }
+}
+
+@keyframes countdownPop {
+  0% { transform: scale(0.6); opacity: 0.2; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}

@@ -1,14 +1,74 @@
+/* =========================================================
+   FASE 3: CITADEL COLLAPSE (TEMA ROXO VÓRTICE & MAGENTA CAÓTICO)
+========================================================= */
+
+:root {
+  --phase-accent: #b026ff;
+  --phase-glow: 0 0 20px rgba(176, 38, 255, 0.4);
+}
+
 body {
+  position: relative;
+  background-color: var(--color-bg-dark);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    radial-gradient(ellipse at center, rgba(30, 0, 40, 0.75) 0%, rgba(10, 0, 15, 0.96) 100%),
     url('../../img/cards/fase3/psic.png');
   background-size: cover; 
   background-position: center; 
+  filter: brightness(0.82) saturate(1.2) contrast(1.15);
 }
 
+/* Identidade Visual Fase 3: Roxo Vórtice / Cidadela Caótica */
 .grid {
   grid-template-columns: repeat(6, 1fr);
   max-width: 1100px;
+  border-color: rgba(176, 38, 255, 0.45);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.8), 0 0 30px rgba(176, 38, 255, 0.4);
+}
+
+.card .face {
+  border-color: #b026ff;
+  box-shadow: 0 0 12px rgba(176, 38, 255, 0.5);
+}
+
+.titulo h1 {
+  color: #e066ff;
+  text-shadow: 0 0 15px #b026ff, 0 0 30px #ff007f;
+}
+
+.subtitle {
+  color: #ff007f;
+}
+
+.hud-bar {
+  border-color: #b026ff;
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.35);
+}
+
+.hud-item i {
+  color: #e066ff;
+}
+
+.hud-item span {
+  color: #ff007f;
+}
+
+.reset, .back-button {
+  color: #e066ff;
+  border-color: #b026ff;
+}
+
+.reset:hover, .back-button:hover {
+  background: #b026ff;
+  color: #ffffff;
+  box-shadow: 0 0 18px #b026ff;
 }
 
 .card {
