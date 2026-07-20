@@ -29,6 +29,14 @@ header {
 
   font-size: 0.9em;
   color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 750px;
 }
 .titulo img {
   width: 100px;
@@ -258,4 +266,19 @@ header {
   color: #00ffcc;
   font-size: 0.7em;
   margin: 0;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width: 480px) {
+  .grid {
+    gap: 6px;
+    padding: 5px;
+    width: 98%;
+  }
+  header {
+    font-size: 0.8em;
+    padding: 10px 5px;
+  }
 }

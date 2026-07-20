@@ -4,9 +4,12 @@ body {
 
   flex-direction: column;
 
-  height: 100vh;
+  min-height: 100vh;
+  /* usa dvh em telas pequenas, mas mantém fallback vh */
+  min-height: 100dvh;
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   position: relative;
 

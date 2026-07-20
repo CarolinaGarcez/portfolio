@@ -17,7 +17,7 @@ const portalLoading =
 
 const validateInput = ({ target }) => {
 
-  if (target.value.length > 3) {
+  if (target.value.length >= 3) {
 
     button.removeAttribute('disabled');
 
