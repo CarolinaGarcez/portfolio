@@ -4,98 +4,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo da Memória interativo inspirado em Rick and Morty. Teste sua memória e salve o multiverso!">
 
   <!-- Ícone da aba -->
   <link rel="shortcut icon" href="img/index/icon.png">
 
-  <title>Jogo da Memória - Rick and Morty</title>
+  <title>Jogo da Memória - Rick and Morty Edition</title>
 
   <!-- Ícones (Font Awesome) -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <!-- CSS -->
   <link href="css/style.css" rel="stylesheet">
-   <link href="css/pages/index.css" rel="stylesheet">
- 
-  
+  <link href="css/pages/index.css" rel="stylesheet">
 
   <!-- JS -->
   <script defer src="./js/login.js"></script>
 </head>
 
 <body>
-<div class="portal-bg"></div>
-  <form class="login-form">
+  <div class="portal-bg"></div>
+
+  <main class="login-form">
     <!-- (efeito glass) -->
     <div class="login-box">
       <!-- TOPO -->
       <div class="login__header">
-       
         <h1>Jogo da Memória</h1>
-     
-    
-         <img src="img/index/rick-and-morty.png" alt="logo">
-         <p class="subtitle"> Edition 🧪</p>
-         
-           <p class="intro-text">
-
-  Teste sua memória e salve o multiverso com os personagens
-  de Rick and Morty!
-
-  <br><br>
-
-  Clique em "Jogar" e divirta-se!
-
-</p>
-       
+        <img src="img/index/rick-and-morty.png" alt="Logo Rick and Morty">
+        <p class="subtitle"> Edition 🧪</p>
+        
+        <p class="intro-text">
+          Teste sua memória e salve o multiverso com os personagens de Rick and Morty!
+          <br><br>
+          Clique em "Jogar" e divirta-se!
+        </p>
       </div>
 
       <!-- INPUT -->
-      <input type="text" placeholder="Digite seu nome" class="login__input" required>
+      <input type="text" placeholder="Digite seu nome" class="login__input" required aria-label="Digite seu nome">
 
       <!-- BOTÃO -->
       <button type="submit" class="login__button" disabled>▶ Jogar</button>
-      
-
     </div>
-
-  </form>
+  </main>
 
   <!-- FOOTER  -->
   <footer>
-
     <div class="footerContainer">
       <div class="socialIcons">
-         <a href="https://www.linkedin.com/in/carolinagarcez"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/CarolinaGarcez"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.instagram.com/mariacarolina.g.a/"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://carolinagarcez.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-solid fa-laptop-code"></i></a>
+        <a href="https://www.linkedin.com/in/carolinagarcez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/CarolinaGarcez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/mariacarolina.g.a/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://carolinagarcez.github.io/portfolio/" target="_blank" rel="noopener noreferrer" aria-label="Portfólio"><i class="fa-solid fa-laptop-code"></i></a>
       </div>
     </div>
 
     <div class="footerBottom">
-      <img src="img/index/meu-logo-neon.png" alt="">
+      <img src="img/index/meu-logo-neon.png" alt="Logo Carolina Garcez">
       <p> © 2026 - Desenvolvido por <span class="designer">Carolina Garcez</span><br>
-  Projeto sem fins comerciais. Rick and Morty™ e imagens pertencem aos seus respectivos criadores.
-</p>
+        Projeto sem fins comerciais. Rick and Morty™ e imagens pertencem aos seus respectivos criadores.
+      </p>
     </div>
-
   </footer>
 
   <div class="portal-loading hidden">
-
-  <div class="portal-animation"></div>
-
-  <h2>
-    Abrindo portal...
-  </h2>
-
-  <p>
-    Sincronizando dimensões 🛸
-  </p>
-
-</div>
+    <div class="portal-animation"></div>
+    <h2>Abrindo portal...</h2>
+    <p>Sincronizando dimensões 🛸</p>
+  </div>
 </body>
+
 </html>

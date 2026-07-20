@@ -1,23 +1,17 @@
 /* =========================================================
-   IMPORTAÇÃO DOS ARQUIVOS CSS
+   IMPORTAÇÃO DOS ARQUIVOS CSS (ARQUITETURA COMPONENTE)
 ========================================================= */
 
 /* ===== BASE ===== */
-
+@import url('./base/variables.css');
 @import url('./base/padrao.css');
 
-
-
-/* ===== LAYOUT ===== */
-
+/* ===== COMPONENTES ===== */
+@import url('./componentes/buttons.css');
+@import url('./componentes/cards.css');
+@import url('./componentes/modal.css');
 @import url('./componentes/footer.css');
-@import url('./pages/vitoria.css');
-@import url('./pages/game.css');
 @import url('./componentes/loading.css');
 
-
-
-
-
-
-
+/* ===== LAYOUT & PÁGINAS ===== */
+@import url('./pages/game.css');

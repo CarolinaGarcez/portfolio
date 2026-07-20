@@ -1,98 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fase 2 - Mortyverse Crisis do Jogo da Memória Rick and Morty. Encontre os pares de Mortys!">
 
   <link rel="shortcut icon" href="../img/index/icon.png">
- <title>Jogo da Memória</title>
+  <title>Fase 2 - Mortyverse Crisis | Jogo da Memória Rick and Morty</title>
 
   <!-- Ícones (Font Awesome) -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <!-- CSS -->
-<link href="../css/style.css" rel="stylesheet">
-<link href="../css/pages/fase2.css" rel="stylesheet">
-
-  
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/pages/fase2.css" rel="stylesheet">
 
   <!-- JS -->
-    <script defer src="../js/fases/fase2.js"></script>
+  <script defer src="../js/fases/fase2.js"></script>
   <script defer src="../js/game.js"></script>
-  
 </head>
 
 <body>
 
   <main>
-  <header>
-    <span class="player"></span>
-
-    <span>⏱ Tempo: <span class="timer">00</span></span>
-
-    <div class="buttons">
-
-  <a href="../index.html" class="back-button">
-    ⬅ Voltar
-  </a>
-
-  <button class="reset">
-    🔄 Reiniciar
-  </button>
-
-</div>
-  </header>
-  <div class="titulo">
-       
-        <h1>Jogo da Memória</h1>
-    
-         <img src="../img/index/rick-and-morty.png" alt="logo">
-         <p class="subtitle"> Mortyverse Crisis</p>
-       
+    <header>
+      <span class="player"></span>
+      <span>⏱ Tempo: <span class="timer">00</span></span>
+      <div class="buttons">
+        <a href="../index.html" class="back-button">⬅ Voltar</a>
+        <button class="reset">🔄 Reiniciar</button>
       </div>
+    </header>
 
-  <div class="grid"></div>
+    <div class="titulo">
+      <h1>Jogo da Memória</h1>
+      <img src="../img/index/rick-and-morty.png" alt="Logo Rick and Morty">
+      <p class="subtitle"> Mortyverse Crisis</p>
+    </div>
 
-  <div class="win-screen hidden">
+    <div class="grid"></div>
 
-  <div class="win-box">
+    <div class="win-screen hidden">
+      <div class="win-box">
+        <h2>WUBBA LUBBA DUB DUB! 🚀</h2>
+        <p class="win-text"></p>
+        <button class="next-phase">Próxima Fase</button>
+      </div>
+    </div>
+  </main>
 
-    <h2>WUBBA LUBBA DUB DUB! 🚀</h2>
-
-    <p class="win-text"></p>
-
-    <button class="next-phase">
-      Próxima Fase
-    </button>
-
-  </div>
-
-</div>
-
-<!-- FOOTER  -->
+  <!-- FOOTER  -->
   <footer>
-
     <div class="footerContainer">
       <div class="socialIcons">
-        <a href="https://www.linkedin.com/in/carolinagarcez"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/CarolinaGarcez"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.instagram.com/mariacarolina.g.a/"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://carolinagarcez.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-solid fa-laptop-code"></i></a>
+        <a href="https://www.linkedin.com/in/carolinagarcez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/CarolinaGarcez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/mariacarolina.g.a/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://carolinagarcez.github.io/portfolio/" target="_blank" rel="noopener noreferrer" aria-label="Portfólio"><i class="fa-solid fa-laptop-code"></i></a>
       </div>
     </div>
 
     <div class="footerBottom">
-      <img src="../img/index/meu-logo-neon.png" alt="">
+      <img src="../img/index/meu-logo-neon.png" alt="Logo Carolina Garcez">
       <p> © 2026 - Desenvolvido por <span class="designer">Carolina Garcez</span><br>
-  Projeto sem fins comerciais. Rick and Morty™ e imagens pertencem aos seus respectivos criadores.
-</p>
+        Projeto sem fins comerciais. Rick and Morty™ e imagens pertencem aos seus respectivos criadores.
+      </p>
     </div>
-
   </footer>
-</main>
 
 </body>
 

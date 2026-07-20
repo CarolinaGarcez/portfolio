@@ -1,69 +1,77 @@
-const input =
-  document.querySelector('.login__input');
+/**
+ * Login Controller - Rick and Morty Memory Game
+ * Gerencia validação do nome do jogador e transição de entrada.
+ */
 
-const button =
-  document.querySelector('.login__button');
-
-const form =
-  document.querySelector('.login-form');
-
-const portalLoading =
-  document.querySelector('.portal-loading');
-
-
-/* =========================
-   VALIDA INPUT
-========================= */
-
-const validateInput = ({ target }) => {
-
-  if (target.value.length >= 3) {
-
-    button.removeAttribute('disabled');
-
-    return;
+// Helper seguro para localStorage com tratamento de erros
+const Storage = {
+  set(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (error) {
+      console.warn(`[Storage] Falha ao salvar ${key}:`, error);
+    }
+  },
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.warn(`[Storage] Falha ao remover ${key}:`, error);
+    }
   }
-
-  button.setAttribute('disabled', '');
-
 };
 
+// Mapeamento defensivo dos elementos do DOM
+const elements = {
+  input: document.querySelector('.login__input'),
+  button: document.querySelector('.login__button'),
+  form: document.querySelector('.login-form'),
+  portalLoading: document.querySelector('.portal-loading')
+};
 
-/* =========================
-   ENTRAR NO JOGO
-========================= */
+/**
+ * Valida o nome digitado pelo jogador (mínimo de 3 caracteres)
+ */
+const validateInput = (event) => {
+  const value = event.target.value.trim();
+  if (!elements.button) return;
 
+  if (value.length >= 3) {
+    elements.button.removeAttribute('disabled');
+  } else {
+    elements.button.setAttribute('disabled', '');
+  }
+};
+
+/**
+ * Processa a submissão do formulário de entrada
+ */
 const handleSubmit = (event) => {
-
   event.preventDefault();
 
-  localStorage.setItem(
-    'player',
-    input.value
-  );
-  localStorage.removeItem('totalTime');
-  localStorage.removeItem('finalTime');
+  if (!elements.input) return;
 
-  /* mostra loading */
-  portalLoading.classList.remove('hidden');
+  const playerName = elements.input.value.trim();
+  if (playerName.length < 3) return;
 
-  /* espera animação */
+  // Armazena jogador e reseta sessões de tempo anteriores
+  Storage.set('player', playerName);
+  Storage.remove('totalTime');
+  Storage.remove('finalTime');
+
+  // Exibe a tela de carregamento do portal
+  if (elements.portalLoading) {
+    elements.portalLoading.classList.remove('hidden');
+  }
+
+  // Redireciona para a Fase 1 após aguardar a animação
   setTimeout(() => {
-
     window.location.href = './pages/fase1.html';
-
   }, 2200);
-
 };
 
-
-/* eventos */
-input.addEventListener(
-  'input',
-  validateInput
-);
-
-form.addEventListener(
-  'submit',
-  handleSubmit
-);
+// Inicialização dos ouvintes de eventos
+if (elements.input && elements.form) {
+  elements.input.addEventListener('input', validateInput);
+  elements.form.addEventListener('submit', handleSubmit);
+}

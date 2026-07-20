@@ -1,27 +1,18 @@
 /* =========================================================
-   BODY
+   PÁGINA FINAL DE VITÓRIA (TELA FINAL)
 ========================================================= */
 
 body {
-
   margin: 0;
-
   min-height: 100vh;
   min-height: 100dvh;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
   overflow-x: hidden;
-
-  font-family: sans-serif;
-
+  font-family: var(--font-family-sans);
   position: relative;
-
-  background-color: #000;
+  background-color: var(--color-bg-dark);
 }
 
 body::before {
@@ -35,395 +26,188 @@ body::before {
       rgba(0,0,0,.95)
     ),
     url('../../img/cards/fase3/psic.png');
-
   background-size: cover;
-
   background-position: center;
-
   will-change: filter;
   transform: translateZ(0);
-
-  animation:
-    psychedelic 12s linear infinite;
+  animation: psychedelic 12s linear infinite;
 }
 
-
-/* =========================================================
-   TELA FINAL
-========================================================= */
-
 .final-screen {
-
   position: relative;
-
   flex: 1;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 40px 20px;
-
   overflow: hidden;
 }
 
-
-/* =========================================================
-   PORTAL
-========================================================= */
-
 .portal-bg {
-
   position: absolute;
-
   width: 700px;
-
   height: 700px;
-
   border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      #7cff00 0%,
-      #00ffcc 30%,
-      transparent 70%
-    );
-
+  background: radial-gradient(
+    circle,
+    var(--color-neon-lime) 0%,
+    var(--color-neon-cyan) 30%,
+    transparent 70%
+  );
   filter: blur(30px);
-
-  opacity: .35;
-
+  opacity: 0.35;
   animation:
     spin 12s linear infinite,
     pulse 5s ease infinite;
 }
 
-
-/* =========================================================
-   BOX FINAL
-========================================================= */
-
 .final-box {
-
   position: relative;
-
   width: 90%;
-
   max-width: 700px;
-
   padding: 50px 40px;
-
   border-radius: 30px;
-
-  background:
-    rgba(10,10,10,.78);
-
+  background: var(--color-bg-card-dark);
   backdrop-filter: blur(10px);
-
-  border: 2px solid #00ffcc;
-
+  border: 2px solid var(--color-neon-cyan);
   text-align: center;
-
-  box-shadow:
-    0 0 40px rgba(0,255,204,.35);
-
+  box-shadow: 0 0 40px rgba(0, 255, 204, 0.35);
   z-index: 2;
-
-  animation:
-    popup .5s ease;
+  animation: popup 0.5s ease;
 }
-
-
-/* =========================================================
-   LOGO
-========================================================= */
 
 .final-logo {
-
   width: 220px;
-
   margin-bottom: 20px;
-
-  filter:
-    drop-shadow(0 0 15px #00ffcc);
+  filter: drop-shadow(0 0 15px var(--color-neon-cyan));
 }
 
-
-/* =========================================================
-   TÍTULO
-========================================================= */
-
 .final-box h1 {
-
-  color: #b2ff00;
-
+  color: var(--color-neon-lime);
   font-size: 2.5rem;
-
   margin: 0;
-
-  text-shadow:
-    0 0 15px #00ffcc;
+  text-shadow: var(--glow-cyan-md);
 }
 
 .final-box h1 span {
-
   display: block;
-
   margin-top: 10px;
-
   font-size: 1rem;
-
   letter-spacing: 3px;
-
-  color: #00ffcc;
+  color: var(--color-neon-cyan);
 }
 
-
-/* =========================================================
-   TEXTO
-========================================================= */
-
 .final-message {
-
-  color: white;
-
+  color: var(--color-text-white);
   font-size: 1rem;
-
   line-height: 1.6;
-
   margin: 25px 0;
 }
 
-
-/* =========================================================
-   STATS
-========================================================= */
-
 .final-stats {
-
   display: flex;
-
   justify-content: center;
-
   gap: 20px;
-
   flex-wrap: wrap;
-
   margin-bottom: 30px;
 }
 
 .stat-card {
-
   min-width: 180px;
-
   padding: 15px 20px;
-
   border-radius: 15px;
-
-  background:
-    rgba(0,0,0,.45);
-
-  border: 1px solid #00ffcc;
-
-  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--color-neon-cyan);
+  color: var(--color-text-white);
 }
 
 .stat-card span {
-
   display: block;
-
   margin-bottom: 8px;
-
-  color: #00ffcc;
-
-  font-size: .9rem;
+  color: var(--color-neon-cyan);
+  font-size: 0.9rem;
 }
 
 .stat-card strong {
-
-  color: #b2ff00;
-
+  color: var(--color-neon-lime);
   font-size: 1.4rem;
 }
 
-
-/* =========================================================
-   BOTÕES
-========================================================= */
-
 .final-buttons {
-
   display: flex;
-
   justify-content: center;
-
   gap: 15px;
-
   flex-wrap: wrap;
 }
 
-.play-again,
-.back-home {
-
-  padding: 12px 24px;
-
-  border-radius: 12px;
-
-  border: 1px solid #00ffcc;
-
-  background: transparent;
-
-  color: #00ffcc;
-
-  text-decoration: none;
-
-  cursor: pointer;
-
-  transition: .3s ease;
-
-  font-weight: bold;
-
-  font-size: .95rem;
+.final-quote {
+  margin-top: 20px;
+  color: var(--color-neon-green);
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 0.9em;
 }
-
-.play-again:hover,
-.back-home:hover {
-
-  background: #00ffcc;
-
-  color: black;
-
-  box-shadow:
-    0 0 20px #00ffcc;
-}
-.final-quote{
-
-  margin-top:20px;
-
-  color:#b2df28;
-
-  font-style:italic;
-
-  opacity:.8;
-
-  font-size:.9em;
-
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
 
 footer {
-
   position: relative;
-
   z-index: 2;
 }
 
-
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
-
+/* ANIMAÇÕES */
 @keyframes spin {
-
   from {
-
-    transform:
-      rotate(0deg);
+    transform: rotate(0deg);
   }
-
   to {
-
-    transform:
-      rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes pulse {
-
-  0%,100% {
-
-    transform:
-      scale(1);
+  0%, 100% {
+    transform: scale(1);
   }
-
   50% {
-
-    transform:
-      scale(1.08);
+    transform: scale(1.08);
   }
 }
 
 @keyframes popup {
-
   from {
-
-    transform:
-      scale(.7);
-
+    transform: scale(0.7);
     opacity: 0;
   }
-
   to {
-
-    transform:
-      scale(1);
-
+    transform: scale(1);
     opacity: 1;
   }
 }
 
 @keyframes psychedelic {
-
   0% {
-
-    filter:
-      hue-rotate(0deg);
+    filter: hue-rotate(0deg);
   }
-
   100% {
-
-    filter:
-      hue-rotate(360deg);
+    filter: hue-rotate(360deg);
   }
 }
 
-
-/* =========================================================
-   RESPONSIVO
-========================================================= */
-
-@media(max-width: 768px){
-
+/* RESPONSIVO */
+@media (max-width: 768px) {
   .final-box {
-
     padding: 35px 20px;
   }
-
   .final-logo {
-
     width: 170px;
   }
-
   .final-box h1 {
-
     font-size: 1.8rem;
   }
-
   .stat-card {
-
     min-width: 140px;
   }
-
   .portal-bg {
-
     width: 500px;
-
     height: 500px;
   }
 }

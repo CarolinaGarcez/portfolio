@@ -1,21 +1,11 @@
-/* =========================================================
-   CONFIGURAÇÃO
-========================================================= */
-
-const gameConfig = {
-
-  /* esta é a última fase */
+/**
+ * Configuração da Fase 3 - Rick and Morty Memory Game
+ */
+const gameConfig = Object.freeze({
   finalPhase: true,
-
-  /* tela final */
   nextPage: '../pages/telafinal.html',
-
-  /* pasta das cartas */
   cardPath: '../img/cards/fase3/',
-
-  /* cartas da fase */
   characters: [
-
     1,
     2,
     3,
@@ -25,7 +15,5 @@ const gameConfig = {
     8,
     9,
     10
-
   ]
-
-};
+});

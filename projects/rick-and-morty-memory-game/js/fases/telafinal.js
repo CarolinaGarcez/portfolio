@@ -1,35 +1,63 @@
-const finalScreen = document.querySelector('.final-screen');
-const finalTime = document.querySelector('.final-time');
-const playAgain = document.querySelector('.play-again');
+/**
+ * End Screen Controller - Rick and Morty Memory Game
+ * Exibe o tempo final acumulado e gerencia o reinício do jogo.
+ */
 
-
-/* MOSTRA TELA FINAL */
-
-const showFinalScreen = () => {
-
-  const time = localStorage.getItem('finalTime') || localStorage.getItem('totalTime') || '0';
-
-  if (finalTime) {
-    finalTime.innerHTML = `${time}s`;
-  }
-
-  if (finalScreen) {
-    finalScreen.classList.remove('hidden');
+// Helper seguro para localStorage com tratamento defensivo
+const Storage = {
+  get(key, defaultValue = '') {
+    try {
+      return localStorage.getItem(key) ?? defaultValue;
+    } catch (error) {
+      console.warn(`[Storage] Falha ao ler ${key}:`, error);
+      return defaultValue;
+    }
+  },
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.warn(`[Storage] Falha ao remover ${key}:`, error);
+    }
   }
 };
 
-window.addEventListener('DOMContentLoaded', showFinalScreen);
+// Mapeamento dos elementos do DOM
+const elements = {
+  finalScreen: document.querySelector('.final-screen'),
+  finalTime: document.querySelector('.final-time'),
+  playAgainBtn: document.querySelector('.play-again')
+};
 
+/**
+ * Atualiza o elemento de tempo final e exibe a tela de vitória
+ */
+const renderFinalScreen = () => {
+  const finalScore = Storage.get('finalTime') || Storage.get('totalTime') || '0';
 
-/* BOTÃO RECOMEÇAR */
+  if (elements.finalTime) {
+    elements.finalTime.textContent = `${finalScore}s`;
+  }
 
-if (playAgain) {
-  playAgain.addEventListener('click', () => {
+  if (elements.finalScreen) {
+    elements.finalScreen.classList.remove('hidden');
+  }
+};
 
-    localStorage.removeItem('player');
-    localStorage.removeItem('totalTime');
-    localStorage.removeItem('finalTime');
+/**
+ * Limpa a sessão atual e retorna à tela de entrada
+ */
+const handlePlayAgain = () => {
+  Storage.remove('player');
+  Storage.remove('totalTime');
+  Storage.remove('finalTime');
 
-    window.location.href = '../index.html';
-  });
+  window.location.href = '../index.html';
+};
+
+// Registra ouvintes quando o DOM estiver pronto
+window.addEventListener('DOMContentLoaded', renderFinalScreen);
+
+if (elements.playAgainBtn) {
+  elements.playAgainBtn.addEventListener('click', handlePlayAgain);
 }

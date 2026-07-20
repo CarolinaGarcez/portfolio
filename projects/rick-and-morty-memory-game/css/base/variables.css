@@ -1,0 +1,31 @@
+/* =========================================================
+   VARIÁVEIS CSS (DESIGN TOKENS)
+========================================================= */
+
+:root {
+  /* Cores Neon */
+  --color-neon-cyan: #00ffcc;
+  --color-neon-blue: #00b5cc;
+  --color-neon-green: #b2df28;
+  --color-neon-lime: #7cff00;
+  
+  /* Cores Neutras */
+  --color-bg-dark: #000000;
+  --color-bg-box: rgba(0, 0, 0, 0.7);
+  --color-bg-card-dark: rgba(10, 10, 10, 0.78);
+  --color-text-white: #ffffff;
+  
+  /* Tipografia */
+  --font-family-retro: 'Press Start 2P', cursive;
+  --font-family-sans: sans-serif;
+  
+  /* Transições */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+
+  /* Sombras Neon (Glows) */
+  --glow-cyan-sm: 0 0 5px var(--color-neon-cyan);
+  --glow-cyan-md: 0 0 10px var(--color-neon-cyan);
+  --glow-cyan-lg: 0 0 25px var(--color-neon-cyan);
+  --glow-green-md: 0 0 10px var(--color-neon-green);
+}

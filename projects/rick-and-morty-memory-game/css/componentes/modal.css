@@ -1,0 +1,53 @@
+/* =========================================================
+   COMPONENTE: MODAL DE VITÓRIA / TELA INTERMEDIÁRIA
+========================================================= */
+
+/* Overlay do Modal */
+.win-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Utilitário Escondido */
+.hidden {
+  display: none !important;
+}
+
+/* Caixas do Modal */
+.win-box {
+  background: #111111;
+  border: 2px solid var(--color-neon-cyan);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+  animation: popup 0.4s ease;
+}
+
+.win-box h2 {
+  color: var(--color-neon-green);
+  margin-bottom: 10px;
+  text-shadow: var(--glow-cyan-md);
+}
+
+.win-text {
+  color: var(--color-text-white);
+  margin-bottom: 20px;
+}
+
+/* Animação Popup Modal */
+@keyframes popup {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
